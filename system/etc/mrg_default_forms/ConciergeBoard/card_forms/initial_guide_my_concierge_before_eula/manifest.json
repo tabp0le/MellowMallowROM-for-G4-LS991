@@ -1,0 +1,14 @@
+{
+	"template":"initial",
+    "summary":"[@string/my_concierge_new]",
+    "source":"[@string/smart_notice_summary]",
+    "buttons":[
+        {
+            "text":"[@string/btn_start_concierge]",
+            "actions":[
+          	    "[@card/action_accept]",
+                "concierge://start_eula_app"
+            ]
+        }
+    ]
+}

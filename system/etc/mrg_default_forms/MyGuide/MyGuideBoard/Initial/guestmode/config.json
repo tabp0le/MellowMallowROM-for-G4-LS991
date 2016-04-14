@@ -1,0 +1,23 @@
+{
+	"version":"3.0",
+	"category":[
+		"com.lge.intent.category.CONCIERGE",
+		"com.lge.intent.category.doyouknow.PROMOTION",
+		"com.lge.intent.category.gboard.DOYOUKNOW"
+	],
+	"id":"dyk_guestmode_card",
+	"params":{
+		"title":"[@string/dyk_guestmode_title]",
+		"desc":"[@string/dyk_guestmode_description]",
+		"bgimg":"res/drawable/dyk_guestmode_bg.jpg",
+		"url":"intent://165.244.64.58/dyk/jsp/dyk20/b2/camera/detail.jsp#Intent;scheme=http;action=com.lge.doyouknow.action.detailview;category=com.lge.intent.category.doyouknow.detailview;component=com.lge.doyouknow/.util.DYKDetailWebview;end",
+		"iconimg":"res/drawable/ic_launcher_camera.png",
+		"goto_app":"intent://#Intent;action=android.intent.action.MAIN;component=com.lge.camera/com.lge.camera.app.CameraActivity;end"
+	},
+	"type":"new_feature",
+	"showStartTime":"",
+	"showEndTime":"",
+	"afterDay":"",
+	"workingDay":"",
+	"expireTime":""
+}

@@ -1,0 +1,22 @@
+{
+	"version":"3.0",
+	"category":[
+		"com.lge.intent.category.CONCIERGE",
+		"com.lge.intent.category.doyouknow.PROMOTION",
+		"com.lge.intent.category.gboard.DOYOUKNOW"
+	],
+	"id":"dyk_oiscamera_card",
+	"params":{
+		"title":"[@string/dyk_oiscamera_title]",
+		"desc":"[@string/dyk_oiscamera_description]",
+		"bgimg":"res/drawable/dyk_oiscamera_bg.jpg",
+		"url":"intent://165.244.64.58/dyk/jsp/dyk20/b2/knockcode/detail.jsp#Intent;scheme=http;action=com.lge.doyouknow.action.detailview;category=com.lge.intent.category.doyouknow.detailview;component=com.lge.doyouknow/.util.DYKDetailWebview;end"
+	},
+	"type":"new_feature",
+	"showStartTime":"",
+	"showEndTime":"",
+	"afterDay":"",
+	"workingDay":"",
+	"expireTime":""
+}
+

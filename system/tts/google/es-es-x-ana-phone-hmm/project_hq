@@ -1,0 +1,33 @@
+#!PA_PROJECT!#
+Description                    "Blaze-generated patts1_hmm_phone voice for es_es (speaker ana, sample rate 22050, size android)";
+ServerVoiceName                "ana-phone-hmm";
+speaker                        "ana";
+sample_rate                    "22050";
+gender                         "female";
+subset                         "android";
+aligner                        "flatstart";
+language                       "es";
+region                         "es";
+quality                        "normal";
+pipeline                       "flatstart_patts1_hmm_phone_es_es_ana_22050_android.pipeline";
+CompileParamsFile              "compile_hmm_phoneme.cfg";
+engine_config                  "engine_config_es_es.pb";
+EngineParamsFile               "engine_hmm_22050_vocaine-embedded_mcep.cfg";
+G2pFstFile                     "g2p_m3_syls0_stress0_es-ES.fst";
+ActiveLexicon                  "compressed_lexicon_es_es.blex";
+lseq_classifier_grammar        "feats_android.far";
+lseq_classifier_model          "lseq_compact_model_farm32.pb";
+RunVoiceFile                   "patts1_hmm_voice_es_es_ana_android_22050_phoneme_mcep_swop_ap_msd_bin_8bit.voice";
+TextNormParamsFile             "textnorm_kestrel.cfg";
+DataParamsFile                 "phonology.cfg";
+phonology                      "phonology.pb";
+pronounce_exl                  "pronounce_android.far";
+resolve_homographs_simple      "resolve_homographs_simple_es.pb";
+rewrite                        "rewrite_android.far";
+roman_numeral_contexts         "roman_numeral_contexts.pb";
+roman_numeral_grammar          "roman_numeral_android.far";
+textnorm_params                "textnorm_params.pb";
+tokenize_and_classify          "tokenize_and_classify_android.far";
+verbalize                      "verbalize_android.far";
+modules                        "rewrite_simple tokenize_and_classify_kestrel classify_roman_numerals_kestrel lseq_classifier verbalize_kestrel classify_homographs_simple pronounce_grm hmm";
+

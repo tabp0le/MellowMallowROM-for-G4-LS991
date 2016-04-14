@@ -1,0 +1,21 @@
+{
+	"template":"default",
+	"db_key":"concierge_spring_cleaning",
+	"card_icon":["ic_smartnotice_spring_cleaning.png", "ic_smartnotice_spring_cleaning.png"],
+	"summary":"[@string/idle_apps_summary]",
+	"source":"[@string/free_up_cleaning_all]",
+	"buttons":[
+		{
+			"text":"[@string/go_to_clean]",
+			"actions":[
+				"[@card/action_accept]",
+				"intent:#Intent;action=com.lge.springcleaning.idle_apps;end"
+			]
+		}
+	],
+	"wearable": {
+		"type":"normal",
+		"buttonIdxs":["0"],
+		"icons":["goto"]
+	}
+}

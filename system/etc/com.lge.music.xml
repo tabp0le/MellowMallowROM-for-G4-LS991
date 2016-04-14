@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+
+<!--
+    This file is used to declare music configuration depend on specific model
+-->
+<music_configration>
+<!--Selection Log Level 
+	Parms: debug, info, error or none
+	Default value is debug-->
+<log_level data="debug" />
+
+<!--Selection Audio Effect Type 
+	Parms: dolby, virtualSurround, lgEffect, dolbyExceptCustom or lgEffectWithCustom
+	Default value is lgEffectWithCustom-->
+<audio_effect data="lgEffectWithCustom" />
+
+<!--Support for Pich Zoom.
+	Default value is false-->
+<support_pinchzoom data="true" />
+
+<!--Support for ID3TAG Editor.
+       Not support in low memory model.
+	Default value is true-->
+<id3tag_editor data="true" />
+
+<!--Support for Cloud Service.
+       Parms: LGU, SKT, VZW, KT or none
+	Default value is none-->
+<cloud_service data="none" />
+
+<!--Check if QVAG Player is.
+        For QVGA Player layout 
+	Default value is false-->
+<qvga_player data="false" />
+
+<!-- Enable hardware acceleration.
+	Default value is true-->
+<hardware_accelerated data="true" />
+
+<!-- Support Audio Effect through Speaker.
+	Default value is false-->
+<eq_through_speaker data="true" />
+
+<!-- Support Play Speed & Pitch.
+    Default value is false-->
+<support_soundcontrol data="true" />
+
+</music_configration>

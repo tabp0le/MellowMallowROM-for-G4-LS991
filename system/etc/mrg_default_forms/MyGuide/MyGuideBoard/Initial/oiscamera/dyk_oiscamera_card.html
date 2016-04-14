@@ -1,0 +1,102 @@
+<div id="dyk_oiscamera_card">
+		<style>
+		@media ( min-resolution : 1dppx) {
+			#dyk_oiscamera_card {
+				width: 100%;
+				height: 191px;
+				position: relative;
+				background : url('res/drawable/dyk_oiscamera_bg.jpg') no-repeat;
+				background-size : cover;
+			}
+			#dyk_oiscamera_card img.imgSrc {
+				width: 48px;
+				height: 48px;
+				content: url('res/drawable/ic_setting.png');
+				border: 0;
+			}
+			#dyk_oiscamera_table{
+				width:100%;
+				height: 100%;
+				border-spacing :0px;
+				padding-right: 11px;
+				padding-left: 11px;
+				padding-top: 11px;
+				padding-bottom: 20px;
+			}
+			#dyk_oiscamera_table_contents{
+				width:239px;
+				height: 100%;
+				border-spacing :0px;
+			}
+			#dyk_oiscamera_table_contents .titleLayout{
+				vertical-align:bottom;
+				font-size: 18px;
+				color: white;
+				text-shadow:0 0px 5px #5c5c5c;
+				font-family: lg-sans-serif-light;
+				font-weight: bold;
+			}
+			#dyk_oiscamera_table_contents .descLayout{
+				vertical-align:top;
+				height: 38px;
+				font-size: 13px;
+				color: white;
+				line-height: 18px;
+				text-shadow:0 0px 5px #5c5c5c;
+				font-family: sans-serif;
+			}
+			td{
+				padding:0px;
+			}
+			#td_oiscamera_right{
+				text-align: right;
+				vertical-align: top;
+			}
+			#td_oiscamera_left{
+				width:239px;
+				text-align: left;
+				vertical-align: bottom;
+			}
+			.space1{
+				height: 8px;
+			}
+			.dyk_oiscamera_text_style{
+				text-overflow: ellipsis;				
+				display: -webkit-box;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+				word-wrap: break-word;				
+				overflow: hidden;
+			}
+		}
+		</style>
+		<a style="font-size: 0px; letter-spacing: -1px;" href='intent://165.244.64.58/dyk/jsp/dyk20/b2/knockcode/detail.jsp#Intent;scheme=http;action=com.lge.doyouknow.action.detailview;category=com.lge.intent.category.doyouknow.detailview;component=com.lge.doyouknow/.util.DYKDetailWebview;S.cardid=[@param/id];end'>
+		<table id="dyk_oiscamera_table">
+			<tr>
+				<td id="td_oiscamera_left">
+					<table id="dyk_oiscamera_table_contents">
+						<tr><td></td></tr>
+						<tr>
+							<td class="titleLayout">
+								<div id="dyk_oiscamera_text_style" class="dyk_oiscamera_text_style">
+								[@param/title]
+								</div>
+							</td>
+						</tr>
+						<tr class="space1"><td></td></tr>
+						<tr>
+							<td class="descLayout">
+								<div id="dyk_oiscamera_text_style" class="dyk_oiscamera_text_style">
+								[@param/desc]
+								</div>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td id="td_oiscamera_right">
+					 <!-- <a href="intent://#Intent;component=com.android.settings/.Settings%24lockscreen.ChooseLockGeneric;end"><img class="imgSrc"></a> -->
+				</td>
+			</tr>
+		</table>
+		</a>
+	</div>

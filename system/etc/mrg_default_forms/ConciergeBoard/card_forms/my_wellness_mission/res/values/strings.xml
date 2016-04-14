@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="mission_summary">Well done! Today's goal achieved.</string>
+    <string name="mission_source">Goal:</string>
+    <string name="check_the_exercise">Check activity</string>
+
+</resources>

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="dyk_guestmode_title">"Camera"</string>
+	<string name="dyk_guestmode_description">"Capture clear, high-quality photos\n with Laser Auto Focus"</string>
+</resources>

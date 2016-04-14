@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<Configure>
+    <!--
+    KT_KR(KT / Korea)
+    LGU_KR(LG Uplus / Korea)
+    -->
+    <Config operator="" country="KR" device="">
+        <IndicatorType> three_toggleV1N </IndicatorType>
+        <IndicatorType targetdevice="zee"> three_toggleV1N_tonedown </IndicatorType>
+        <RingSoundScenarioType> onlyndefdiscovered </RingSoundScenarioType>
+        <PowerSaveType> rwp2p </PowerSaveType>
+        <PopupDialogType> INITVALUE </PopupDialogType>
+        <AccessControlEnable> false </AccessControlEnable>
+        <LockScreenPollingEnable> true </LockScreenPollingEnable>
+        <PermittedSeBroadcastEnable> false </PermittedSeBroadcastEnable>
+        <EmptyPopupSupport> false </EmptyPopupSupport>
+        <NFCCEventConfig> rffield_EEevent_off </NFCCEventConfig>
+        <HostCardEmulationScenario> config, config, uicc, uicc </HostCardEmulationScenario>
+
+    </Config>
+    <!-- OPEN_KR -->
+    <Config operator="OPEN" country="KR" device="">
+        <SecureElementType> INITVALUE </SecureElementType>
+        <PowerSaveType> all </PowerSaveType>
+        <PopupDialogType> INITVALUE </PopupDialogType>
+        <AccessControlEnable> false </AccessControlEnable>
+        <EmptyPopupSupport> false </EmptyPopupSupport>
+        <AdvancedHCEEnable> false </AdvancedHCEEnable>
+        <HostCardEmulationScenario> host, host, host, na </HostCardEmulationScenario>
+        <AutomaticSwitchingSupport> false </AutomaticSwitchingSupport>
+    </Config>
+</Configure>

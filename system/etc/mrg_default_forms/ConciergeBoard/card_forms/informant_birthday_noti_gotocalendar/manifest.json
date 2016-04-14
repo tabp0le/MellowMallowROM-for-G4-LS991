@@ -1,0 +1,21 @@
+{
+	"template":"default",
+	"card_icon":["ic_smartnotice_birthday.png", "ic_smartnotice_birthday.png"],
+	"summary":"[@param/birthday_noti_summary] [@param/birthday_noti_suggestion]",
+	"source":"[@time/mmddee,birthday] [@param/place]<br> [@string/plan]",
+	"buttons":[
+		{
+			"text":"[@string/calendar]",
+			"actions":[
+				"[@card/action_accept]",
+				"intent:#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;component=com.android.calendar/.AllInOneActivity;end"
+				
+			]
+		}
+	],
+	"wearable": {
+		"type":"normal",
+		"buttonIdxs":["0"],
+		"icons":["goto"]
+	}
+}

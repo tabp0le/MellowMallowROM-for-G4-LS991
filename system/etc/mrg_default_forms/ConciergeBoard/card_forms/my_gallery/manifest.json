@@ -1,0 +1,20 @@
+{
+	"template":"default",
+	"summary": "[@param/sourceSummary]",
+	"source": "[@param/source_text]",
+	"buttons": [
+		{
+			"text": "[@string/cancle]",
+			"actions": ["html://confirm_popup?id=[@param/id]"]
+		}, {
+			"text": "[@string/ok]",
+			"actions": ["[@card/action_accept]", "intent:#Intent;action=android.intent.action.INSERT_OR_EDIT;type=vnd.android.cursor.item/contact;launchFlags=0x8000000;i.phone_type=2;S.phone=[@param/phone];end"]
+		}
+	],
+
+	"wearable": {
+		"type": "normal",
+		"buttonIdxs": ["1"],
+		"icons": ["add"]
+	}
+}

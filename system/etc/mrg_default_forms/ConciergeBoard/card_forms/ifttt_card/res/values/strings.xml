@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="title_text" translatable="false">[@param/title]</string>
+    <string name="source_text" product="default">From IFTTT</string>
+    <string name="ok">OK</string>
+
+</resources>

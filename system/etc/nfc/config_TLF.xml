@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<Configure>
+    <!--
+    TLF_ES(Telefonica / Spain)
+    TLF_EU(Telefonica / European Union)
+    -->
+    <Config operator="TLF" country="" device="">
+        <DefaultOnOffType> open </DefaultOnOffType>
+    </Config>
+</Configure>

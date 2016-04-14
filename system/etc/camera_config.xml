@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Preference>
+    <P1>
+        <!-- Mode ************************************************* -->
+        <item name="mode_rear_supported">
+            mode_normal,
+            mode_panorama,
+            mode_dual_camera,
+			mode_slow_motion
+        </item>
+        <item name="mode_front_supported">
+            mode_normal,
+            mode_dual_camera
+        </item>
+        <!-- camera rear size ************************************************* -->
+        <item name="camera_pictureSize_rear_supported">
+            5312x2988,
+            3984x2988,
+            2976x2976
+        </item>
+        <!-- 3264x2448,-->
+        <item name="camera_previewSize_rear_supported">
+            1920x1080,
+            1920x1440,
+            1440x1440
+        </item>
+        <item name="camera_previewSizeOnScreen_rear_supported">
+            2560x1440,
+            1920x1440,
+            1440x1440
+        </item>
+        <item name="camera_pictureSize_rear_default">
+            5312x2988
+        </item>
+        <!-- camera front size ************************************************* -->
+        <item name="camera_pictureSize_front_supported">
+            3264x2448,
+            3264x1836,
+            2048x2048
+        </item>
+        <item name="camera_previewSize_front_supported">
+            1280x960,
+            1280x720,
+            1280x1280
+        </item>
+        <item name="camera_previewSizeOnScreen_front_supported">
+            1920x1440,
+            2560x1440,
+            1440x1440
+        </item>
+        <item name="camera_pictureSize_front_default">
+            3264x1836
+        </item>
+        <!-- video rear size *************************************************** -->
+        <item name="video_size_rear_supported">
+            3840x2160,
+			1920x1080@60,
+            1920x1080,
+            1280x720,
+            1280x720@120,
+            640x480,
+            320x240,
+            176x144
+        </item>
+        <item name="video_previewSizeOnScreen_rear_supported">
+            2560x1440,
+            2560x1440,
+            2560x1440,
+            2560x1440,
+            1920x1440,
+            1920x1440,
+            1056x864
+        </item>
+        <item name="video_size_rear_default">
+            1920x1080
+        </item>
+        <!-- video front size *************************************************** -->
+        <item name="video_size_front_supported">
+            1920x1080,
+            1280x720,
+            640x480,
+            320x240,
+            176x144
+        </item>
+        <item name="video_previewSizeOnScreen_front_supported">
+            2560x1440,
+            2560x1440,
+            1920x1440,
+            1920x1440,
+            1056x864
+        </item>
+        <item name="video_size_front_default">
+            1920x1080
+        </item>
+        <!-- focus *************************************************** -->
+        <item name="focus_supported">
+            mw_continuous-picture,
+            manual-focus,
+            face_tracking
+        </item>
+        <item name="focus_default">
+            mw_continuous-picture
+        </item>
+        <!-- iso *************************************************** -->
+        <item name="iso_supported">
+            auto,
+            100,
+            200,
+            400,
+            800
+        </item>
+        <item name="iso_default">
+            auto
+        </item>
+        <!-- zsl supported *************************************************** -->
+        <item name="zsl_supported">
+            1
+        </item>
+        <!-- Multi AF supported *************************************************** -->
+        <item name="multi_af_supported">
+            true
+        </item>
+        <!-- HDMI MHL supported *************************************************** -->
+        <item name="hdmi_mhl_supported">
+            true
+        </item>
+        <!-- Morpho night shot *************************************************** -->
+        <item name="morpho_night_shot_supported">
+            true
+        </item>
+        <!-- Renesas ISP *************************************************** -->
+        <item name="use_renesas_ISP">
+            false
+        </item>
+        <!-- MTK *************************************************** -->
+        <item name="MTK_chipset">
+            false
+        </item>
+        <!-- Light frame *************************************************** -->
+        <item name="light_frame_supported">
+            true
+        </item>
+        <!-- Long shot *************************************************** -->
+        <item name="long_shot_supported">
+            true
+        </item>
+        <!-- panorama *************************************************** -->
+        <item name="panorama_preview_size">
+            1280x720
+        </item>
+        <!-- beautyshot *************************************************** -->
+        <item name="beautyshot_supported">
+            2
+        </item>
+        <!-- HDR *************************************************** -->
+        <item name="hdr_supported">
+            3
+        </item>
+        <!-- super zoom *************************************************** -->
+        <item name="super_zoom_supported">
+            true
+        </item>
+        <!-- AE focus *************************************************** -->
+        <item name="AE_focus_supported">
+            true
+        </item>
+        <!-- Motion Quickview *************************************************** -->
+        <item name="motionquickviewer_supported">
+            true
+        </item>
+        <!-- HAL 3.0 *************************************************** -->
+        <item name="hal_supported">
+            1
+        </item>
+        <!-- Raw format *************************************************** -->
+        <item name="raw_picture_saving_supported">
+            true
+        </item>
+        <!-- Manual mode *************************************************** -->
+        <item name="manual_mode_supported">
+            true
+        </item>
+        <!-- Beauty shot tone adjustment value ********************************* -->
+        <item name="beautyshot_tone_adjust">
+            75
+        </item>
+        <!-- Voice shutter *************************************************** -->
+        <item name="voice_shutter_supported">
+            true
+        </item>
+        <!-- JamJam shot *************************************************** -->
+        <item name="jamjam_gesture_supported">
+            true
+        </item>
+        <item name="flash_disable_battery_level">
+				5
+        </item>
+    </P1>
+</Preference>
+

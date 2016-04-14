@@ -1,0 +1,15 @@
+{
+	"template":"initial",
+	"card_icon":["ic_initialguide_01.png","ic_initialguide_01.png"],
+    "summary":"[@string/my_concierge_new]",
+    "source":"[@string/smart_notice_summary_tablet]",
+    "buttons":[
+        {
+            "text":"[@string/ok]",
+            "actions":[
+                "[@card/action_accept]",
+                "setdb://setting?S.help_settings_my_concierge_tips=0"
+            ]
+        }
+    ]
+}

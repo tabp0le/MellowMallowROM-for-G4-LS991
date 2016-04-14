@@ -1,0 +1,15 @@
+{
+	"template":"default",
+	"card_icon":["ic_smartnotice_activity.png","ic_smartnotice_activity.png"],
+	"summary":"[@param/mission_summary]",
+	"source":"[@param/mission_source]",
+	"buttons":[
+		{
+			"text":"[@string/button_check_activity]",
+			"actions":[
+				"[@card/action_accept]",
+				"intent:#Intent;component=com.lge.lifetracker/.MainActivity;S.view_type=exercise;end"
+			]
+		}
+	]
+}

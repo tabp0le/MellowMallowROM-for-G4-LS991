@@ -1,0 +1,15 @@
+<resources>
+    <string name="sum_recent_call_exist">You’ve been in frequent contact with <b>[@param/display_phone]</b>. Add the number to Contacts?</string>
+    <string name="sum_recent_msg_exist">You’ve been in frequent contact with <b>[@param/display_phone]</b>. Add the number to Contacts?</string>
+    <string name="sum_recent_call_msg_exist">You’ve been in frequent contact with <b>[@param/display_phone]</b>. Add the number to Contacts?</string>
+    <string name="sum_recent_call_exist_cname">You’ve been in frequent contact with <b>[@param/display_phone]([@param/cname])</b>. Add the number to Contacts?</string>
+    <string name="sum_recent_msg_exist_cname">You’ve been in frequent contact with <b>[@param/display_phone]([@param/cname])</b>. Add the number to Contacts?</string>
+    <string name="sum_recent_call_msg_exist_cname">You’ve been in frequent contact with <b>[@param/display_phone]([@param/cname])</b>. Add the number to Contacts?</string>
+    <string name="total_call_exist">Total [@param/call_count] calls ([@param/call_minutes] min)</string>
+    <string name="total_msg_exist">Total [@param/msg_count] messages</string>
+    <string name="total_call_msg_exist">Total [@param/call_count] calls ([@param/call_minutes] min) and [@param/msg_count] messages</string>
+	<string name="smartnotice_btn_ignore">Ignore</string>
+	<string name="add_contact">Add to contacts</string>
+    <string name="confirm_not_anymore_add_contact">This phone number will not be suggested to add anymore.</string>
+    <string name="have_similar_number">Last 4 digits match <b>[@param/similar_number_name]</b> in Contacts </string>
+</resources>

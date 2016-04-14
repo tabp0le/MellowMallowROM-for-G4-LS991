@@ -1,0 +1,22 @@
+{
+	"template":"default",
+	"card_icon":["ic_app_recommend_add.png", "ic_app_recommend_add.png"],
+	"summary":"[@param/summary]",
+	"source":"[@param/source]",
+	"buttons":[
+		{
+			
+			"text":"[@string/go_to_Smart_settings]",
+			"actions":[
+				"[@card/action_accept]",
+				"intent:#Intent;launchFlags=0x8000;component=com.lge.iftttmanager/.ui.RecipeDetailActivity;S.action_field_slugs=[@param/action_field];S.action_field_values=[@param/package_name];S.recipe_slug=[@param/recipe_slug];S.trigger_field_slugs=[@param/trigger_field_slugs];S.trigger_field_values=[@param/trigger_field_values];end"
+			]
+		}
+	],
+	"wearable": {
+		"type":"normal",
+		"buttonIdxs":["0"],
+		"icon":["goto"]
+	},
+	"title":"[@string/package_title]"	
+}

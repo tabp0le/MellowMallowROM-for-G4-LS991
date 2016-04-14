@@ -1,0 +1,12 @@
+{
+    "adaptive_color_fixed_style":[
+     	{
+            "argb":{
+            	"min":"ff00b0e4",
+            	"max":"ff19d8ff"
+            },
+            "colors":["ff00dade", "ff2c99b4", "ffffffff", "99ffffff", "66ffffff"]
+        }
+    ],
+    "default_color_set":["ff00dade", "ff2c99b4", "ffffffff", "99ffffff", "66ffffff"]
+}

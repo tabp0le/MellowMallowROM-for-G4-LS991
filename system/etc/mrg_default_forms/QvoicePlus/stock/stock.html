@@ -1,0 +1,88 @@
+<script>
+//---------------------------------------------------------------------------------------------------
+// fstock line & click event
+
+var pressed_bg_imgae = 'url(' + folderPath + 'agent_list_bg_pressed.png)';
+var origin_bg_image;
+var pressed_status = false;
+
+$(".fstockline").on('touchstart',function(e){
+	if (!pressed_status) {
+		origin_bg_image =  $(e.currentTarget).css('background-image');
+		$(e.currentTarget).css('background-image', pressed_bg_imgae);
+		pressed_status = true;
+	}
+    return true;
+});
+
+$(".fstockline").on('touchmove',function(e){
+    $(e.currentTarget).css('background-image', origin_bg_image);
+    pressed_status = false;
+    return true;
+});
+
+$(".fstockline").on('touchend',function(e){
+    $(e.currentTarget).css('background-image', origin_bg_image);
+    var info= $(e.currentTarget).data('fstocklineinfo');
+    console.log(JSON.stringify(info));
+    window.AndroidInterface.sendToAndroidForStartActivity(JSON.stringify(info));
+    pressed_status = false;
+    return true;
+});
+
+// stock_referecetime
+var stock_referecetime;
+</script>
+<style type="text/css">
+table.fstockline {
+	background:url("<%= folderPath %>agent_list_bg_01.png");
+}
+</style>
+<li>
+	<% _.each( data, function(listItem, index){
+		stock_referecetime = listItem.stock_referecetime;
+		%>
+		<div>
+		<table class="fstockline" width=100% height="64" valign="center" style="padding-left:12px; padding-right:12px;"
+		data-fstocklineinfo='{
+			"action": "<%= listItem.action %>",
+			"package": "<%= listItem.package %>",
+			"class": "<%= listItem.class %>",
+			"uri": "<%= listItem.uri %>",
+			"create_new_tab": "<%= listItem.create_new_tab %>"
+		}'>
+			<tr>
+				<th width=50%><span class="agent_list_01">
+					<%= listItem.stock_name %>
+				</span></th>
+				<td align="right" width=40%>
+					<span class="agent_list_01"><%= listItem.stock_price %></span><br>
+				<% if(3 > listItem.stock_updown) { %>
+					<span id="stock_updowndelta" class="agent_list_sub_03" encoding="utf-8"> ▲ &nbsp;
+				<% } else if (3 < listItem.stock_updown) { %>
+					<span id="stock_updowndelta" class="agent_list_sub_04" encoding="utf-8"> ▼ &nbsp;
+				<% } else { %>
+					<span id="stock_updowndelta" class="agent_list_sub_02"encoding="utf-8"> - &nbsp;
+				<% } %>
+					<%= listItem.stock_updownprice %> &nbsp;
+					<%= listItem.stock_updownpercent %>
+					</span>
+				</td>
+			</tr>
+		</table>
+		<% if (data.length-1 > index) { %>
+			<table width=100% height=1 style="background-image: url('<%= folderPath %>agent_list_line.png');"></table>
+		<% } %>
+		</div>
+	<% }); %>
+	<div>
+		<table width=100%>
+			<tr>
+				<td height=1 align="right"><span id="stock_referecetime" class="agent_list_sub_02"></span></td>
+				<script>
+					document.getElementById("stock_referecetime").innerHTML=stock_referecetime;
+				</script>
+			</tr>
+		</table>
+	</div>
+</li>

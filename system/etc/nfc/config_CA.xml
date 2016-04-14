@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<Configure>
+    <!-- Rogers / Canada -->
+    <Config operator="" country="CA" device="">
+    </Config>
+    <!-- Telus / Canada -->
+    <Config operator="TLS" country="CA" device="">
+        <AccessControlEnable> false </AccessControlEnable>
+        <AccessControlEnable targetdevice="p1"> true </AccessControlEnable>
+    </Config>
+    <!-- Bell / Canada -->
+    <Config operator="BELL" country="CA" device="">
+        <DefaultOnOffType> offp2p </DefaultOnOffType>
+    </Config>
+    <!-- Wind / Canada -->
+    <Config operator="WIN" country="CA" device="">
+        <DefaultOnOffType> offp2p </DefaultOnOffType>
+    </Config>
+    <!-- Videotron / Canada -->
+    <Config operator="VTR" country="CA" device="">
+        <DefaultOnOffType> offp2p </DefaultOnOffType>
+    </Config>
+</Configure>

@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="ok">OK</string>
+    <string name="cancle">CANCLE</string>
+    <string name="sourceSummary">MyGallery</string>
+    <string name="source_text">MyGallery</string>
+
+</resources>

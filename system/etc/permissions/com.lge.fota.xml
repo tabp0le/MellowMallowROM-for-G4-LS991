@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <permission name="com.lge.permission.ACCESS_LGFOTA" >
+        <group gid="system" />
+    </permission>
+</permissions>

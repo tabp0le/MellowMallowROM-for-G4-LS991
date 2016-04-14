@@ -1,0 +1,161 @@
+<script>
+function TypeClass (v, value) {
+   this.type = v;
+   this.value = value;
+};
+//---------------------------------------------------------------------------------------------------
+//fsch line & click event
+
+var pressed_fschLine_imgae = "url("+folderPath+"agent_list_bg_pressed.png)";
+var org_fschLine_image;
+
+$(".fscheduleLine").on('touchstart',function(e){
+    org_fschLine_image =  $(e.currentTarget).css('background-image');
+    $(e.currentTarget).css('background-image', pressed_fschLine_imgae);
+
+    return true;
+});
+
+$(".fscheduleLine").on('touchmove',function(e){
+    $(e.currentTarget).css('background-image', org_fschLine_image);
+    return true;
+});
+
+$(".fscheduleLine").on('touchend',function(e){
+    $(e.currentTarget).css('background-image', org_fschLine_image);
+
+    var info= $(".fscheduleLine").data('fschinfo');
+
+    if(info["status"]!="1") {
+        var ori_info_dtstart = info["dtstart"];
+        var ori_info_dtend = info["dtend"];
+        var ori_info_calendar_id = info["calendar_id"];
+        var ori_info_allDay = info["allDay"];
+
+        var oDtstart = new TypeClass("Long",info["beginTime"]);
+        info["beginTime"] = oDtstart;
+
+        var oDtend = new TypeClass("Long",info["endTime"]);
+        info["endTime"] = oDtend;
+
+        var oCalendar_id = new TypeClass("Long",info["calendar_id"]);
+        info["calendar_id"] = oCalendar_id;
+
+        var oAllDay = new TypeClass("Boolean",info["allDay"]);
+        info["allDay"] = oAllDay;
+    }
+    console.log(JSON.stringify(info));
+    window.AndroidInterface.sendToAndroidForStartActivity(JSON.stringify(info));
+
+    if(info["status"]!="1") {
+        info["beginTime"] = ori_info_dtstart;
+        info["endTime"] = ori_info_dtend;
+        info["calendar_id"] = ori_info_calendar_id;
+        info["allDay"] = ori_info_allDay;
+    }
+
+    return true;
+});
+//---------------------------------------------------------------------------------------------------
+//fsch button & click event
+
+var pressed_button_image = "url("+folderPath+"agent_list_btn_pressed.png)";
+var org_button_image;
+
+$(".schedule_btn").on('touchstart',function(e){
+    org_button_image =  $(e.currentTarget).css('background-image');
+    $(e.currentTarget).css('background-image', pressed_button_image);
+
+    return true;
+});
+
+$(".schedule_btn").on('touchmove',function(e){
+    $(e.currentTarget).css('background-image', org_button_image);
+
+    return true;
+});
+
+$(".schedule_btn").on('touchend',function(e){
+    $(e.currentTarget).css('background-image', org_button_image);
+
+    return true;
+});
+
+function buttonConfirm(e) {
+    //send pressed info "yes"
+    var JSONObject = {"choice":"yes"};
+    console.log(JSON.stringify(JSONObject));
+    window.AndroidInterface.sendToAndroidForWernickeManager(JSON.stringify(JSONObject));
+
+    $(".button").hide();
+}
+
+function buttonCancel(e) {
+    ///send pressed info "no"
+    var JSONObject = {"choice":"no"};
+    console.log(JSON.stringify(JSONObject));
+    window.AndroidInterface.sendToAndroidForWernickeManager(JSON.stringify(JSONObject));
+
+    $(".button").hide();
+}
+
+</script>
+
+<li>
+    <div width=100% style="background-image: url('<%= folderPath %>agent_list_bg_01.png');">
+        <table cellpadding="0" cellspacing="0" width="100%" height="48px" style="padding-left:9px;">
+            <tr>
+                <td><div class="agent_list_info"><%= data.dateweek_view %></div></td>
+            </tr>
+        </table>
+        <table class="fscheduleLine" width="100%" cellpadding="0" cellspacing="0"  style="padding :9px 12px 10px 12px;  height: 64px;"
+        <% // before saving, jump to app edit %>
+        <% if(data.status == "0") {%>
+        data-fschinfo='{
+                "package": "<%= data.package %>",
+                "class": "com.android.calendar.EditEventActivity",
+                "beginTime":"<%= data.dtstart %>",
+                "endTime":"<%= data.dtend %>",
+                "title":"<%= data.title %>",
+                "description":"<%= data.description %>",
+                "eventTimezone":"<%= data.eventTimezone %>",
+                "rrule":"<%= data.rrule %>",
+                "eventLocation":"<%= data.eventLocation %>",
+                "calendar_id":"<%= data.calendar_id %>",
+                "status":"<%= data.status %>",
+                "allDay":"<%= data.allDay %>"
+        }' <% } else { %>
+        <% // after saved, jump to app main list %>
+                data-fschinfo='{
+                "package": "<%= data.package %>",
+                "class": "com.android.calendar.AllInOneActivity",
+                "title":"<%= data.title %>",
+                "description":"<%= data.description %>",
+                "status":"<%= data.status %>"
+        }'> <% } %>
+            <tr>
+                <td  colspan="2"><% if(data.title) {%><span class="agent_list_01" style="word-break:break-all;"><%= data.title %></span><%} else {%><span class="agent_list_01_guide"><%= data.guide_title %></span><%}%></td>
+            </tr>
+            <tr>
+                <td  colspan="2"><span class="agent_list_sub_01"><%= data.time_view %></span></td>
+            </tr>
+        </table>
+
+        <div class="button" style="background-image: url('<%= folderPath %>qvoice_command_bg.png');
+                background-size:100% 100%; height:48px;
+            <% if(data.confirm && data.cancel)  { %>
+            <%} else {%>
+                display : none;
+            <%}%>
+        ">
+            <div class="schedule_btn" style="width:50%; height:100%; valign:middle; float:left; text-align:center;"
+                    onclick="buttonCancel(event);">
+                <span class="agent_list_01" style="position:relative; top: 30%;"><%= data.cancel %></span>
+            </div>
+            <div class="schedule_btn" style="width:50%; height:100%; valign:middle; float:right; text-align:center;"
+                    onclick="buttonConfirm(event);">
+                <span class="agent_list_01" style="position:relative; top: 30%;"><%= data.confirm %></span>
+            </div>
+        </div>
+    </div>
+</li>

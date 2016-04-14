@@ -1,0 +1,162 @@
+<script>
+//---------------------------------------------------------------------------------------------------
+//alarm bg & click event
+var pressed_alarmbg_image = "url("+folderPath+"agent_list_bg_pressed.png)";
+var org_alarmbg_image;
+
+
+var pressed_status = false;
+
+$(".alarm_search").on('touchstart',function(e){
+    org_alarmbg_image =  $(e.currentTarget).css('background-image');
+    $(e.currentTarget).css('background-image', pressed_alarmbg_image);
+    pressed_status = true;
+
+    return true;
+});
+
+$(".alarm_search").on('touchmove',function(e){
+    $(e.currentTarget).css('background-image', org_alarmbg_image);
+    pressed_status = false;
+    return true;
+});
+
+$(".alarm_search").on('touchend',function(e){
+    if(pressed_status){
+        $(e.currentTarget).css('background-image', org_alarmbg_image);
+        var info = $(e.currentTarget).data('gotoalarmdetail');
+
+        var ori_info_hour = info["hour"];
+        var ori_info_minutes = info["minutes"];
+        var ori_info_daysofweek = info["daysofweek"];
+        var ori_info_snooze = info["snooze"];
+
+        var oHour = new TypeClass("Integer",info["hour"]);
+        info["hour"] = oHour;
+        var oMinutes = new TypeClass("Integer",info["minutes"]);
+        info["minutes"] = oMinutes;
+        var oDaysofweek = new TypeClass("Integer",info["daysofweek"]);
+        info["daysofweek"] = oDaysofweek;
+        var oSnooze = new TypeClass("Integer",info["snooze"]);
+        info["snooze"] = oSnooze;
+
+        console.log(JSON.stringify(info));
+        window.AndroidInterface.sendToAndroidForStartActivity(JSON.stringify(info));
+
+        info["hour"] = ori_info_hour;
+        info["minutes"] = ori_info_minutes;
+        info["daysofweek"] = ori_info_daysofweek;
+        info["snooze"] = ori_info_snooze;
+    }
+    return true;
+});
+
+//---------------------------------------------------------------------------------------------------
+//alarm onoff & click event
+function TypeClass (v, value) {
+   this.type = v;
+   this.value = value;
+};
+
+var img_src_alarm_on = folderPath+"agent_list_btn_alarm_on.png";
+var img_src_alarm_off = folderPath+"agent_list_btn_alarm_off.png";
+
+$(".flipButton").on('touchstart',function(e){
+    var info = $(e.currentTarget).data('alarmonoff');
+    if (info["enabled"] == "0") {
+        $(e.currentTarget).attr("src",img_src_alarm_on);
+        info["enabled"] = "1";
+        $(e.currentTarget).attr("aria-label",info["talkback_on"]);
+    } else {
+        $(e.currentTarget).attr("src",img_src_alarm_off);
+        info["enabled"]= "0";
+        $(e.currentTarget).attr("aria-label",info["talkback_off"]);
+    }
+
+    var ori_info = info["_id"];
+    var o = new TypeClass("Integer",info["_id"]);
+    info["_id"] = o;
+
+    console.log(JSON.stringify(info));
+    window.AndroidInterface.sendToAndroidForBroadcast(JSON.stringify(info));
+    info["_id"] = ori_info;
+
+    return false;
+});
+$(".flipButton").on('touchmove',function(e){
+    return false;
+});
+$(".flipButton").on('touchend',function(e){
+    return false;
+});
+
+$('body').animate({ scrollTop:0},500);
+</script>
+
+<li >
+    <% _.each( data, function(listItem, index){ %>
+    <div style="background-image: url('<%= folderPath %>agent_list_bg_01.png');"
+            class="alarm_search" data-gotoalarmdetail='{
+            "action": "<%= listItem.action %>",
+            "package": "<%= listItem.package %>",
+            "class": "<%= listItem.class %>",
+            "_id":"<%= listItem._id %>",
+            "hour":"<%= listItem.hour %>",
+            "minutes":"<%= listItem.minutes %>",
+            "daysofweek":"<%= listItem.daysofweek %>",
+            "enabled":"<%= listItem.enabled %>",
+            "snooze":"<%= listItem.snooze %>",
+            "tone":"<%= listItem.tone %>",
+            "vib":"<%= listItem.vib %>",
+            "puzzle":"<%= listItem.puzzle %>",
+            "memo":"<%= listItem.memo %>",
+            "widget_yn":"<%= listItem.widget_yn %>",
+            "alarm_link":"<%= listItem.alarm_link %>",
+            "alarm_link_text":"<%= listItem.alarm_link_text %>",
+            "alarm_volume":"<%= listItem.alarm_volume %>"
+    }'>
+    <table width="100%" cellpadding="0" cellspacing="0" style="padding: 0px 8px 0px 12px;" >
+        <tr>
+            <td>
+                 <% if(listItem.ampm_view && listItem.is_kr == "1") { %>
+                 <span class="agent_list_alarm_time_ampm"><%= listItem.ampm_view %>&nbsp;</span>
+                 <% } %>
+                 <span class="agent_list_alarm_time"><%= listItem.time_view %></span>
+                 <% if(listItem.ampm_view && listItem.is_kr == "0") { %>
+                 <span class="agent_list_alarm_time_ampm">&nbsp;<%= listItem.ampm_view %></span>
+                 <% } %>
+            </td>
+            <td rowspan="2">
+            <!-- on-off button start-->
+                <div>
+                    <img
+                        <% if( listItem.enabled == "1" ){ %>
+                            src="<%= folderPath %>agent_list_btn_alarm_on.png"
+                            aria-label="<%= listItem.talkback_on %>"
+                        <% } else { %>
+                            src="<%= folderPath %>agent_list_btn_alarm_off.png"
+                            aria-label="<%= listItem.talkback_off %>"
+                        <% } %>
+                        class="flipButton"
+                        data-alarmonoff='{"action":"com.lge.clock.alarmclock.ALARM_CHANGE_ACTION",
+                            "enabled":"<%= listItem.enabled %>",
+                            "_id":"<%= listItem._id %>",
+                            "talkback_on":"<%= listItem.talkback_on %>",
+                            "talkback_off":"<%= listItem.talkback_off %>"}'
+                    width=40 height=40 align="right" >
+                </div>
+                <!-- on-off button end-->
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-bottom:4px;"><div class="agent_list_alarm_name"><%= listItem.week_view %></div></td>
+        </tr>
+        <% if (data.length-1 > index) {%>
+        <tr>
+            <table width="100%" height="1px" style="background-image: url('<%= folderPath %>agent_list_line.png'); "></table>
+        <tr>
+        <% } %>
+    </table>
+    </div>
+    <% }); %>
+</li>

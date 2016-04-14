@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<Configure>
+    <!--
+    OPEN_TR ( Open / Turkey )
+    -->
+    <Config operator="" country="TR" device="">
+        <DefaultOnOffType> open </DefaultOnOffType>
+    </Config>
+</Configure>

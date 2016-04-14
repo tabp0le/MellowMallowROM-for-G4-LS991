@@ -1,0 +1,40 @@
+<resources>
+
+    <!-- Global -->
+    <string name="cs_add_contact_proposal_title">New contact suggestions</string>
+    <string name="cs_add_contact_proposal_desc">Suggest a card when there are frequent calls to or from a number not saved to Contacts</string>
+    <string name="cs_reconnect_noti_title">Callback reminders</string>
+    <string name="cs_reconnect_noti_desc">Suggest a card when no call is made after a decline message is sent</string>
+    <string name="cs_power_saving_title">Battery saver</string>
+    <string name="cs_power_saving_desc">Suggest a card when the battery is low</string>
+    <string name="cs_birth_noti_title">Birthday notifications</string>
+    <string name="cs_birth_noti_desc">Show notifications for birthdays saved in Calendar and Contacts</string>
+    <string name="cs_birth_noti_desc_tablet">Show notifications for birthdays saved in Calendar</string>
+    <string name="cs_spring_cleaning_title">Smart Cleaning</string>
+    <string name="cs_spring_cleaning_desc">Suggest cleaning temporary files, downloaded files, and idle apps</string>
+    <string name="cs_qmemo_title">Memo reminders</string>
+    <string name="cs_qmemo_description">Provide notifications about memos with time and location reminders</string>
+    <string name="cs_my_guide_title">Smart Tips</string>
+    <string name="cs_my_guide_desc">Show tips on how to use your phone</string>
+    <string name="cs_my_story_title">Life square</string>
+    <string name="cs_my_story_desc">Suggest past memories based on time and place</string>
+    <string name="cs_my_health_title">LG Health</string>
+    <string name="cs_my_wellness_desc">Show exercise status updates</string>
+    <string name="cs_favorite_contact_title">Favorite contact notifications</string>
+    <string name="cs_favorite_contact_desc">Show notifications about favorite contacts that have not been in touch for over 3 months</string>
+
+    <!-- U.S -->
+    <string name="cs_traffic_info_title">Traffic notifications</string>
+    <string name="cs_traffic_info_desc">Provide traffic info for commute</string>
+    <string name="cs_weather_special_title">Weather alerts</string>
+    <string name="cs_weather_special_desc">Suggest a card when there is weather alert</string>
+    <string name="cs_paypal_title">PayPal</string>
+    <string name="cs_paypal_desc">Provide notifications about shops nearby that accept payment or check in via PayPal</string>
+    <string name="cs_my_place_title">My places</string>
+    <string name="cs_my_place_desc">Suggest changes to settings automatically and recommend apps based on location data</string>
+
+    <!-- Korea -->
+    <string name="cs_gwallet_title">G wallet</string>
+    <string name="cs_gwallet_desc">Provide notifications about shops nearby that accept G wallet membership cards</string>
+    
+</resources>

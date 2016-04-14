@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Features>
+
+    <!-- Default value, when model name was not found.-->
+    <Model name="default">
+        <modelfeatureloaded>true</modelfeatureloaded>
+        <oldhomebuttonled>false</oldhomebuttonled>
+        <usescreenoffeffect>true</usescreenoffeffect>
+        <knockondisplay>false</knockondisplay>
+        <usehometouchbutton>true</usehometouchbutton>
+        <add_kt_ui_ver12>false</add_kt_ui_ver12>
+        <actionbardatausagepadding>false</actionbardatausagepadding>
+        <usesmartscreencategory>false</usesmartscreencategory>
+        <nousbmultiple>false</nousbmultiple>
+        <tphonemodesupport>true</tphonemodesupport>
+    </Model>
+
+    <Model name="w7ds,w5ds,w3ds,w7dsn" extends="default">
+        <modelfeatureloaded>true</modelfeatureloaded>
+    </Model>
+    
+    <Model name="f6" extends="default">
+        <!-- Use Home button led old layout -->
+        <oldhomebuttonled>true</oldhomebuttonled>
+    </Model>
+    
+    <Model name="omega" extends="default">
+        <!-- unuse screen off effect -->
+        <usescreenoffeffect>false</usescreenoffeffect>
+        <nousbmultiple>true</nousbmultiple>
+    </Model>
+    <Model name="omegar" extends="default">
+        <!-- unuse screen off effect -->
+        <usescreenoffeffect>false</usescreenoffeffect>
+        <nousbmultiple>true</nousbmultiple>
+    </Model>
+    
+    <Model name="gvfhd" extends="default">
+        <!-- unuse screen off effect -->
+        <usescreenoffeffect>false</usescreenoffeffect>
+        <nousbmultiple>true</nousbmultiple>
+    </Model>
+    
+    <Model name="luv90ss" extends="default">
+        <!-- unuse screen off effect -->
+        <oldhomebuttonled>true</oldhomebuttonled>
+        <usescreenoffeffect>false</usescreenoffeffect>
+        <knockondisplay>true</knockondisplay>
+    </Model>
+    
+    <Model name="luv20ss" extends="default">
+        <knockondisplay>true</knockondisplay>
+    </Model>
+    
+    <Model name="luv20ds" extends="default">
+        <knockondisplay>true</knockondisplay>
+    </Model>
+    
+    <Model name="luv20ts" extends="default">
+        <knockondisplay>true</knockondisplay>
+    </Model>
+    
+    <Model name="luv90nfc" extends="default">
+        <!-- unuse screen off effect -->
+        <oldhomebuttonled>true</oldhomebuttonled>
+        <usescreenoffeffect>false</usescreenoffeffect>
+        <knockondisplay>true</knockondisplay>
+    </Model>    
+
+    <Model name="z2" extends="default">
+        <add_kt_ui_ver12>true</add_kt_ui_ver12>
+        <tphonemodesupport>false</tphonemodesupport>
+    </Model>
+
+    <Model name="c70w,g4stylusw,p1" extends="default">
+        <add_kt_ui_ver12>true</add_kt_ui_ver12>
+    </Model>
+
+    <Model name="e2" extends="default">
+        <usehometouchbutton>false</usehometouchbutton>
+        <usequietmode>false</usequietmode>
+    </Model>
+
+    <Model name="e2ds" extends="default">
+        <usehometouchbutton>false</usehometouchbutton>
+        <usequietmode>false</usequietmode>
+    </Model>
+
+    <Model name="e2n" extends="default">
+        <usehometouchbutton>false</usehometouchbutton>
+        <usequietmode>false</usequietmode>
+    </Model>
+
+    <Model name="e2nac" extends="default">
+        <usehometouchbutton>false</usehometouchbutton>
+        <usequietmode>false</usequietmode>
+    </Model>
+
+    <Model name="e2nam" extends="default">
+        <usehometouchbutton>false</usehometouchbutton>
+        <usequietmode>false</usequietmode>
+    </Model>
+
+    <Model name="e2nas" extends="default">
+        <usehometouchbutton>false</usehometouchbutton>
+        <usequietmode>false</usequietmode>
+    </Model>
+
+    <Model name="e2nav" extends="default">
+        <usehometouchbutton>false</usehometouchbutton>
+        <usequietmode>false</usequietmode>
+    </Model>
+
+    <Model name="vee7e" extends="default">
+        <oldhomebuttonled>true</oldhomebuttonled>
+    </Model>
+    <Model name="vfp" extends="default">
+        <actionbardatausagepadding>true</actionbardatausagepadding>
+    </Model>
+    <Model name="vfpv" extends="default">
+        <actionbardatausagepadding>true</actionbardatausagepadding>
+    </Model>
+    <Model name="geefhd4g" extends="default">
+        <usescreenoffeffect>false</usescreenoffeffect>
+        <nousbmultiple>true</nousbmultiple>    
+    </Model>
+    <Model name="geefhd" extends="default">
+        <usescreenoffeffect>false</usescreenoffeffect>
+        <nousbmultiple>true</nousbmultiple>
+    </Model>
+    <Model name="awifi" extends="default">
+        <nousbmultiple>true</nousbmultiple>    
+    </Model>
+</Features>

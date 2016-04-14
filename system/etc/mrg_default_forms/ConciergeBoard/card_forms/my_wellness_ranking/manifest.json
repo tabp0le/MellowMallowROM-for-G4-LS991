@@ -1,0 +1,21 @@
+{
+	"template":"default",
+	"db_key":"concierge_my_wellness",
+	"card_icon":["ic_smartnotice_ranking.png","ic_smartnotice_ranking.png"],
+	"summary":"[@param/ranking_summary]",
+	"source":"[@string/ranking_source]",
+	"buttons":[
+		{
+			"text":"[@string/check_ranking]",
+			"actions":[
+				"[@card/action_accept]",
+				"intent:#Intent;component=com.lge.lifetracker/.MainActivity;S.view_type=ranking;end"
+			]
+		}
+	],
+	"wearable": {
+		"type":"normal",
+		"buttonIdxs":["0"],
+		"icons":["goto"]
+	}
+}

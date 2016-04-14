@@ -1,0 +1,32 @@
+{
+	"template":"default",
+	"card_icon":["ic_smartnotice_add.png", "ic_smartnotice_add.png"],
+    "summary":"[@param/summary_text]",
+    "source":"[@param/source_text]<br>[@param/source_text_2]",
+    "buttons":[
+        {
+            "text":"[@string/smartnotice_btn_ignore]",
+            "actions":[
+                "html://confirm_popup?id=[@param/id]"
+            ]
+        },
+        {
+            "text":"[@string/add_contact]",
+            "actions":[
+                "[@card/action_accept]",
+                "intent:#Intent;action=android.intent.action.INSERT_OR_EDIT;type=vnd.android.cursor.item/contact;launchFlags=0x8000000;i.phone_type=2;S.phone=[@param/phone];end"
+            ]
+        }
+    ],
+    "confirm_popup":{
+        "desc":"[@string/confirm_not_anymore_add_contact]",
+        "actions":[
+            "[@card/action_decline]"
+        ]
+    },
+	"wearable": {
+		"type":"normal",
+		"buttonIdxs":["1"],
+		"icons":["add"]
+	}
+}

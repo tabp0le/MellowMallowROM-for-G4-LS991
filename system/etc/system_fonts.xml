@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+    System Fonts
+
+    This file lists the font families that will be used by default for all supported glyphs.
+    Each entry consists of a family, various names that are supported by that family, and
+    up to four font files. The font files are listed in the order of the styles which they
+    support: regular, bold, italic and bold-italic. If less than four styles are listed, then
+    the styles with no associated font file will be supported by the other font files listed.
+
+    The first family is also the default font, which handles font request that have not specified
+    specific font names.
+
+    Any glyph that is not handled by the system fonts will cause a search of the fallback fonts.
+    The default fallback fonts are specified in the file /system/etc/fallback_fonts.xml, and there
+    is an optional file which may be supplied by vendors to specify other fallback fonts to use
+    in /vendor/etc/fallback_fonts.xml.
+-->
+<familyset>
+
+    <family>
+        <nameset>
+            <name>default_roboto</name>
+            <name>sans-serif</name>
+            <name>arial</name>
+            <name>helvetica</name>
+            <name>tahoma</name>
+            <name>verdana</name>
+        </nameset>
+        <fileset>
+            <file>Roboto-Regular.ttf</file>
+            <file>Roboto-Bold.ttf</file>
+            <file>Roboto-Italic.ttf</file>
+            <file>Roboto-BoldItalic.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <nameset>
+            <name>lgtravel</name>
+        </nameset>
+        <fileset>
+            <file>HYTravel_Regular.ttf</file>
+            <file>HYTravel_Bold.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <nameset>
+            <name>hyfonxrain</name>
+        </nameset>
+        <fileset>
+            <file>HYFoxrain_Regular.ttf</file>
+            <file>HYFoxrain_Bold.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <nameset>
+            <name>hycoffee</name>
+        </nameset>
+        <fileset>
+            <file>HYCoffee_Regular.ttf</file>
+            <file>HYCoffee_Bold.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <nameset>
+            <name>hypure</name>
+        </nameset>
+        <fileset>
+            <file>HYPureWhite_Regular.ttf</file>
+            <file>HYPureWhite_Bold.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <nameset>
+            <name>lgserif</name>
+        </nameset>
+        <fileset>
+            <file>HYSerif_Regular.ttf</file>
+            <file>HYSerif_Bold.ttf</file>
+        </fileset>
+    </family>
+
+    <family>
+        <nameset>
+            <name>sans-serif-light</name>
+        </nameset>
+        <fileset>
+            <file>Roboto-Light.ttf</file>
+            <file>Roboto-LightItalic.ttf</file>
+        </fileset>
+    </family>
+
+    <family>
+        <nameset>
+            <name>sans-serif-thin</name>
+        </nameset>
+        <fileset>
+            <file>Roboto-Thin.ttf</file>
+            <file>Roboto-ThinItalic.ttf</file>
+        </fileset>
+    </family>
+
+    <family>
+        <nameset>
+            <name>sans-serif-condensed</name>
+        </nameset>
+        <fileset>
+            <file>RobotoCondensed-Regular.ttf</file>
+            <file>RobotoCondensed-Bold.ttf</file>
+            <file>RobotoCondensed-Italic.ttf</file>
+            <file>RobotoCondensed-BoldItalic.ttf</file>
+        </fileset>
+    </family>
+
+    <family>
+        <nameset>
+            <name>sans-serif-medium</name>
+        </nameset>
+        <fileset>
+            <file>Roboto-Medium.ttf</file>
+            <file>Roboto-MediumItalic.ttf</file>
+        </fileset>
+    </family>
+
+    <family>
+        <nameset>
+            <name>sans-serif-black</name>
+        </nameset>
+        <fileset>
+            <file>Roboto-Black.ttf</file>
+            <file>Roboto-BlackItalic.ttf</file>
+        </fileset>
+    </family>
+
+    <family>
+        <nameset>
+            <name>sans-serif-condensed-light</name>
+        </nameset>
+        <fileset>
+            <file>RobotoCondensed-Light.ttf</file>
+            <file>RobotoCondensed-LightItalic.ttf</file>
+        </fileset>
+    </family>
+
+    <family>
+        <nameset>
+            <name>serif</name>
+            <name>times</name>
+            <name>times new roman</name>
+            <name>palatino</name>
+            <name>georgia</name>
+            <name>baskerville</name>
+            <name>goudy</name>
+            <name>fantasy</name>
+            <name>ITC Stone Serif</name>
+        </nameset>
+        <fileset>
+            <file>NotoSerif-Regular.ttf</file>
+            <file>NotoSerif-Bold.ttf</file>
+            <file>NotoSerif-Italic.ttf</file>
+            <file>NotoSerif-BoldItalic.ttf</file>
+        </fileset>
+    </family>
+
+    <family>
+        <nameset>
+            <name>Droid Sans</name>
+        </nameset>
+        <fileset>
+            <file>DroidSans.ttf</file>
+            <file>DroidSans-Bold.ttf</file>
+        </fileset>
+    </family>
+
+    <family>
+        <nameset>
+            <name>monospace</name>
+            <name>sans-serif-monospace</name>
+            <name>monaco</name>
+        </nameset>
+        <fileset>
+            <file>DroidSansMono.ttf</file>
+        </fileset>
+    </family>
+
+    <family>
+        <nameset>
+            <name>serif-monospace</name>
+            <name>courier</name>
+            <name>courier new</name>
+        </nameset>
+        <fileset>
+            <file>CutiveMono.ttf</file>
+        </fileset>
+    </family>
+
+    <family>
+        <nameset>
+            <name>casual</name>
+        </nameset>
+        <fileset>
+            <file>ComingSoon.ttf</file>
+        </fileset>
+    </family>
+
+    <family>
+        <nameset>
+            <name>cursive</name>
+        </nameset>
+        <fileset>
+            <file>DancingScript-Regular.ttf</file>
+            <file>DancingScript-Bold.ttf</file>
+        </fileset>
+    </family>
+
+    <family>
+        <nameset>
+            <name>sans-serif-smallcaps</name>
+        </nameset>
+        <fileset>
+            <file>CarroisGothicSC-Regular.ttf</file>
+        </fileset>
+    </family>
+
+    <family>
+        <nameset>
+            <name>Stable_Slap</name>
+        </nameset>
+        <fileset>
+            <file>Font1_Stable_Slap.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <nameset>
+            <name>Luminous_Serif</name>
+        </nameset>
+        <fileset>
+            <file>Font2_Luminous_Serif.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <nameset>
+            <name>Smart_Monospaced</name>
+        </nameset>
+        <fileset>
+            <file>Font3_Smart_Monospaced.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <nameset>
+            <name>Luminous_Sans</name>
+        </nameset>
+        <fileset>
+            <file>Font4_Luminous_Sans.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <nameset>
+            <name>Comics_Narrow</name>
+        </nameset>
+        <fileset>
+            <file>Font5_Comics_Narrow.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <nameset>
+            <name>Luminous_Script</name>
+        </nameset>
+        <fileset>
+            <file>Font6_Luminous_Script.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <nameset>
+            <name>Spacious_SmallCap</name>
+        </nameset>
+        <fileset>
+            <file>Font7_Spacious_SmallCap.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <nameset>
+            <name>lg-sans-serif-light</name>
+        </nameset>
+        <fileset>
+            <file>LGRoboto-Light.ttf</file>
+        </fileset>
+    </family>
+</familyset>

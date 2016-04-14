@@ -1,0 +1,16 @@
+<script>
+//---------------------------------------------------------------------------------------------------
+// body scroll for chatting, word chain.
+var document_height = $(document).height();
+var system_height = $(".systemUtt").height();
+var scroll_height = document_height - system_height;
+
+$('body').animate({ scrollTop:scroll_height},1000);
+
+</script>
+
+<li style="padding: 8px 99px 15px 7px; word-wrap:break-word;" >
+    <div class="systemUtt">
+        <span role="region" class="agent_qvoice_01_fontscale"><%= data.system%></span>
+    </div>
+</li>

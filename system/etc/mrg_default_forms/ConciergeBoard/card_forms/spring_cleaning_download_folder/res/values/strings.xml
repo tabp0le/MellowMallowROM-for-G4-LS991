@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="download_folder_summary"><b>[@param/num] downloaded files</b> found. Downloaded files can be cleaned to free up space.</string>
+    <string name="free_up_cleaning_all">Free up [@param/size] by cleaning all.</string>
+    <string name="go_to_clean">Go to Smart Cleaning</string>
+
+</resources>

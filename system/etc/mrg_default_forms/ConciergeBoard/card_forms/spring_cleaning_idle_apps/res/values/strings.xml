@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="idle_apps_summary"><b>[@param/num] apps</b> that have been idle for more than [@param/period]. Idle apps can be cleaned to free up space.</string>
+    <string name="free_up_cleaning_all">Free up [@param/size] by cleaning all.</string>
+    <string name="go_to_clean">Go to Smart Cleaning </string>
+
+</resources>

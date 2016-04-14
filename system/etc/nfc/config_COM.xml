@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<Configure>
+    <!-- Default -->
+    <!--
+    OPEN_XXX
+
+    OPEN_EU(Europe)
+    OPEN_VNM(Vietnam)
+    OPEN_MYS(Malaysia)
+    OPEN_CIS
+    OPEN_TW(Taiwan)
+    OPEN_ZAF(South Africa)
+    OPEN_SCA(South Centrl America)
+    OPEN_HK(Hongkong)
+    OPEN_ESA(East South Asia)
+    OPEN_AME(Middle East Asia & Africa)
+     -->
+    <Config operator="" country="" device="">
+    </Config>
+
+    <!-- XXX_COM  -->
+    <Config operator="" country="COM" device="">
+        <DefaultOnOffType> open </DefaultOnOffType>
+    </Config>
+    <!-- XXX_EU  -->
+    <Config operator="" country="EU" device="">
+        <DefaultOnOffType> open </DefaultOnOffType>
+    </Config>
+    <!-- Vodafone / Open -->
+    <Config operator="VDF" country="COM" device="">
+        <DefaultOnOffType> open </DefaultOnOffType>
+    </Config>
+    <!-- Orange / Open -->
+    <Config operator="ORG" country="COM" device="">
+        <RingSoundScenarioType> usevibrate </RingSoundScenarioType>
+        <DefaultOnOffType> open </DefaultOnOffType>
+    </Config>
+    <!-- T-Mobile / Open -->
+    <Config operator="TMO" country="COM" device="">
+        <DefaultOnOffType> open </DefaultOnOffType>
+        <AdvancedHCEEnable> false </AdvancedHCEEnable>
+        <HostCardEmulationScenario> host, host, host, host </HostCardEmulationScenario>
+        <AutomaticSwitchingSupport> false </AutomaticSwitchingSupport>
+    </Config>
+    <!-- AME / Open -->
+    <Config operator="OPEN" country="AME" device="">
+        <DefaultOnOffType> open </DefaultOnOffType>
+    </Config>
+    <!-- Hutchison / Open -->
+    <Config operator="H3G" country="COM" device="">
+        <DefaultOnOffType> open </DefaultOnOffType>
+    </Config>
+</Configure>

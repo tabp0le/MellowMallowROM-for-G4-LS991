@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+
+<!--
+    This file is used to declare music configuration depend on specific model
+-->
+<video_configration>
+<!--Selection Log Level
+	Parms: debug, info, error or none
+	Default value is debug-->
+<log_level data="debug" />
+
+<!--Support for Gesture.
+	Default value is false-->
+<no_support_gesture data="false" />
+<!--Enable or Disable MultiThread thumbnail.
+	Default value is false-->
+<multithread_thumb data="true" />
+<!--Support for HDMI.
+	Default value is false-->
+<no_support_hdmi data="false" />
+<!--Support HDMI Audio.
+	Default value is false-->
+<support_hdmi_audio data="false" />
+<!--Support IS_ENHVIDEO_SPEED_CTRL
+	Default value is false-->
+<enhvideo_speed_ctrl data="true" />
+<!--Support IS_ENHVIDEO_THUMBNAIL_PLIST
+	Default value is false-->
+<enhvideo_thumbnail_list data="false" />
+<!--Support IS_SLIMPORT
+	Default value is false-->
+<support_sllimport data="true" />
+<!--Support IS_HARDKEYLESS_SUPPORTED
+	Default value is false-->
+<support_hardkeyless data="true" />
+<!--Support IS_SUPPORT_ONEHANDEDOPERATION
+	Default value is false-->
+<support_one_handed_operation data="false" />
+<!--Support IS_SCREEN_ROTATION_SUPPORTED
+	Default value is false-->
+<support_screen_rotation data="true" />
+<!--Support IS_SUPPORT_DUAL_SPEAKER
+	Default value is false-->
+<support_dual_speaker data="false" />
+<!--No Support support_not_multi_alc
+	Default value is false-->
+<support_not_multi_alc data="DCM,TMO" TMO_COUNTRY="US"/>
+<!--Support IS_SUPPORT_SLOWMOTION
+	Default value is false-->
+<support_slow_motion data="true"/>
+<!--Enable or Disable IS_NUPLAYER_EVENT_SUPPORT
+	Default value is false-->
+<support_nuplayer_event data="true" />
+<!--support native_flow_support data.
+	Default value is false-->
+<native_flow_support data="false" />
+<!--support support_pure_surround data.
+	Default value is false-->
+<support_pure_surround data="false" />
+<!--Enable or Disable DSDP.
+	Default value is false-->
+<support_not_dsdp data="false" />
+<!--Ordered Share list.
+	Default value is null (ATT:com.android.mms:com.lge.email,LGU:lg.uplusbox)-->
+<share_popup_list data="null"/>
+<!--Enable or Disable Fast Video.
+    Default value is false-->
+<support_fast_video data="true" />
+</video_configration>

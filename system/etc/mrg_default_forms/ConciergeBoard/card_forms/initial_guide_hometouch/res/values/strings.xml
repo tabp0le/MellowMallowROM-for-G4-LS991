@@ -1,0 +1,5 @@
+<resources>
+    <string name="hometouch_title_text">Set up Home touch buttons</string>
+    <string name="hometouch_source_text">You can arrange or add the Home touch buttons the way you want.</string>
+    <string name="btn_hometouch_settings">Set up now</string>
+</resources>

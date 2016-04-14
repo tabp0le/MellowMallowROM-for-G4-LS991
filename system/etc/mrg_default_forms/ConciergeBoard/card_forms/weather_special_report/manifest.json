@@ -1,0 +1,18 @@
+{
+	"template":"default",
+	"db_key":"concierge_weather_newsflash",
+	"card_icon":["ic_smartnotice_alert.png", "ic_smartnotice_alert.png"],
+	"summary":"[@string/weather_alert] [@param/title]",
+	"source":"[@string/effective_time] : [@time/device,anounce_time]",
+	"buttons":[
+		{
+			"text":"[@string/ok]",
+			"actions":[
+				"[@card/action_accept]"
+			]
+		}
+	],
+	"wearable": {
+		"type":"normal"
+	}
+}

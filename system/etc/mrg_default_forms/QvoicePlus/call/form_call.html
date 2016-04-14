@@ -1,0 +1,90 @@
+<script>
+//---------------------------------------------------------------------------------------------------
+//falarm button & click event
+
+var pressed_button_image = "url("+folderPath+"agent_list_btn_pressed.png)";
+var org_button_image;
+
+$(".call_btn").on('touchstart',function(e){
+    org_button_image =  $(e.currentTarget).css('background-image');
+    $(e.currentTarget).css('background-image', pressed_button_image);
+
+    return true;
+});
+
+$(".call_btn").on('touchmove',function(e){
+    $(e.currentTarget).css('background-image', org_button_image);
+
+    return true;
+});
+
+$(".call_btn").on('touchend',function(e){
+    $(e.currentTarget).css('background-image', org_button_image);
+
+    return true;
+});
+
+
+function TypeClass (v, value) {
+   this.type = v;
+   this.value = value;
+};
+
+function buttonSave(e) {
+    var info= $(".button").data('fcallinfo');
+
+    var JSONObject = {"choice":"yes"};
+    console.log(JSON.stringify(JSONObject));
+    window.AndroidInterface.sendToAndroidForWernickeManager(JSON.stringify(JSONObject));
+
+    $(".button").css('display','none');
+}
+
+function buttonCancel(e) {
+    $(".button").css('display','none');
+
+    ///send pressed info "no"
+    var JSONObject = {"choice":"no"};
+    console.log(JSON.stringify(JSONObject));
+    window.AndroidInterface.sendToAndroidForWernickeManager(JSON.stringify(JSONObject));
+}
+</script>
+
+<li>
+    <div width=100% style="background-image: url('<%= folderPath %>agent_list_bg_01.png'); ">
+ 
+        <table width=100% style="color:#ffffff; padding: 10px; " class="fcall" data-fcallinfo='{
+                "action": "android.intent.action.CALL",
+                "uri": "tel:<%= data.number %>"
+                 }' >
+        <% if(data.name){%>
+            <tr >
+                <td  style="text-align:left;"><span class="agent_font_96_01"><%= data.name %></span></td>
+            </tr>
+            <tr>
+                <td height=3 ><img src="<%= folderPath %>agent_list_line.png" height=2px width=100%></td>
+            </tr>
+        <% } %>
+            <tr >
+                <td  style="text-align:left;"><div class="agent_font_60_01"><%= data.number %></div></td>
+            </tr>
+        </table>
+
+        <div class="button" style="background-image: url('<%= folderPath %>qvoice_command_bg.png');
+                background-size:100% 100%; height:48px;
+            <% if(data.confirm && data.cancel) {%>
+            <%} else {%>
+                display : none;
+            <%}%>
+            ">
+            <div class="call_btn" style="width:50%; height:100%; valign:middle; float:left; text-align:center;"
+                    onclick="buttonCancel(event);">
+                <span class="agent_list_01" style="position:relative; top: 30%;"><%= data.cancel %></span>
+            </div>
+            <div class="call_btn" style="width:50%; height:100%; valign:middle; float:right; text-align:center;"
+                    onclick="buttonSave(event);">
+                <span class="agent_list_01" style="position:relative; top: 30%;"><%= data.confirm %></span>
+            </div>
+        </div>
+    </div>
+</li>

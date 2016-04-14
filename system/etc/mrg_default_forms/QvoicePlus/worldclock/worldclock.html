@@ -1,0 +1,23 @@
+<li style="background-image: url('<%= folderPath %>agent_list_bg_01.png'); height: 64px;">
+    <% _.each( data, function(listItem, index){ %>
+    <table class="clock_search" width="100%" cellpadding="0" cellspacing="0" style="padding: 10px 12px 10px 12px;">
+        <tr valign="center">
+            <td>
+                <span class="agent_list_01"><%= listItem.country%></span>
+            </td>
+            <td rowspan="2" align="right">
+                <% if(listItem.ampm_view && listItem.is_kr == "1") { %>
+                <span class="agent_list_alarm_time_ampm"><%= listItem.ampm_view %>&nbsp;</span>
+                <% } %>
+                <span class="agent_list_alarm_time"><%= listItem.time_view %></span>
+                <% if(listItem.ampm_view && listItem.is_kr == "0") { %>
+                <span class="agent_list_alarm_time_ampm">&nbsp;<%= listItem.ampm_view %></span>
+                <% } %>
+            </td>
+        </tr>
+        <tr>
+            <td><span class="agent_list_sub_02"><%= listItem.city %></span></td>
+        </tr>
+    </table>
+    <% }); %>
+</li>

@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="lgbackup_card_title">Set up from old phone</string>
+    <string name="lgbackup_card_summary">You can copy data from your old phone with LG Backup.</string>
+    <string name="lgbackup_card_ok">Set up now</string>
+
+</resources>

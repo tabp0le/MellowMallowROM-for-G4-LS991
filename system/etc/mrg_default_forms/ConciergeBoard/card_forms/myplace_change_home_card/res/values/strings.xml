@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="title_text"> <b>You may have moved recently. Change home to this address?</b> </string>
+    <string name="source_text">From: [@param/value1] <br> To: [@param/value2] </br></string>
+    <string name="see_more">See more</string>
+    <string name="change">Change</string>
+    <string name="title_my_place">My places</string>
+
+</resources>

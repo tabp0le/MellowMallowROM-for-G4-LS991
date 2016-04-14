@@ -1,0 +1,108 @@
+<div id="ois_camera_card">
+	<style>
+		@media ( min-resolution : 1dppx) {
+			#ois_camera_card {
+				width: 100%;
+				position: relative;
+				background : url([@param/bgimg]) no-repeat;
+				background-size: cover;
+			}
+		
+			#ois_camera_card img.imgSrc {
+				width: 48px;
+				height: 48px;
+				content: url([@param/iconimg]);
+				border: 0;
+			}
+			
+			#ois_camera_card .titleLayout {
+				width: 100%;
+				line-height: 40px;
+				font-size: 18px;
+				color: white;
+				z-index: 1;
+				text-align: left;
+				font-family: lg-sans-serif-light;
+				text-overflow: ellipsis;				
+				display: -webkit-box;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+				word-wrap: break-word;				
+				overflow: hidden;
+				vertical-align: bottom;
+				font-weight: bold;
+			}
+			
+			#ois_camera_card .descLayout {				
+				width: 100%;
+				line-height: 19px;
+				font-size: 13px;
+				color: white;
+				z-index: 1;
+				text-align: left;
+				font-family: sans-serif;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+				word-wrap: break-word;
+				overflow: hidden;
+				vertical-align: top;
+				height: 38px;
+			}
+			
+			#ois_camera_card .space9{
+				height : 5%;	
+				width: 200px;
+			}
+			
+			#ois_camera_card .space14{
+				height : 9%;	
+				width: 57%;
+			}
+			
+			#ois_camera_card .space34{
+				height : 18%;	
+				width: 57%;
+			}
+			
+			#ois_camera_card .space22{
+				height : 11%;	
+				width: 57%;
+			}
+			
+			td{
+				padding:0px;
+			}
+			
+			#ois_camera_card .imgIcon{
+				height : 48px;
+				text-align : left;				
+			}
+		}
+	</style>
+	<a style="font-size: 0px; letter-spacing: -1px;" href=[@param/url]>
+	<table align = left`	 style="height:100%; width:70%;  border-spacing :0px; padding-right:11px; padding-left:11px; padding-bottom:16px;">
+		<tr>
+			<td class='space' rowspan=7></td>
+			<td class='space14'></td>
+		</tr>
+		<tr>
+			<td class='imgIcon'><a href=[@param/goto_app]><img class="imgSrc"></a>
+			</td>
+		</tr>
+		<tr>
+			<td class='space34'></td>
+		</tr>
+		<tr>
+			<td class='titleLayout'>[@param/title]</td>
+		</tr>
+		<tr>
+			<td class='space9'></td>
+		</tr>
+		<tr>
+			<td class='descLayout'>[@param/desc]</td>
+		</tr>
+	</table>
+	</a>
+</div>

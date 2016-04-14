@@ -1,0 +1,132 @@
+<script>
+//---------------------------------------------------------------------------------------------------
+//alarm list & click event
+
+var pressed_alarmList_image = "url("+folderPath+"agent_list_bg_pressed.png)";
+var org_alarmList_image;
+
+$(".alarm_list").on('touchstart',function(e){
+    org_alarmList_image =  $(e.currentTarget).css('background-image');
+    $(e.currentTarget).css('background-image', pressed_alarmList_image);
+    return true;
+});
+
+$(".alarm_list").on('touchmove',function(e){
+    $(e.currentTarget).css('background-image', org_alarmList_image);
+    return true;
+});
+
+$(".alarm_list").on('touchend',function(e){
+    $(e.currentTarget).css('background-image', org_alarmList_image);
+
+    if($(".button").css('display')=="none") { // after saved, don't need to jump to app
+        var info = $(e.currentTarget).data('alarmaftersave');
+
+        console.log(JSON.stringify(info));
+        window.AndroidInterface.sendToAndroidForStartActivity(JSON.stringify(info));
+    } else {
+        var info = $(e.currentTarget).data('gotonewalarm');
+
+        console.log(JSON.stringify(info));
+        window.AndroidInterface.sendToAndroidForStartActivity(JSON.stringify(info));
+    }
+    return true;
+});
+//---------------------------------------------------------------------------------------------------
+//alarm button & click event
+
+var pressed_button_image = "url("+folderPath+"agent_list_btn_pressed.png)";
+var org_button_image;
+
+$(".alarm_btn").on('touchstart',function(e){
+    org_button_image =  $(e.currentTarget).css('background-image');
+    $(e.currentTarget).css('background-image', pressed_button_image);
+    return true;
+});
+
+$(".alarm_btn").on('touchmove',function(e){
+    $(e.currentTarget).css('background-image', org_button_image);
+
+    return true;
+});
+
+$(".alarm_btn").on('touchend',function(e){
+    $(e.currentTarget).css('background-image', org_button_image);
+
+    return true;
+});
+
+function TypeClass (v, value) {
+   this.type = v;
+   this.value = value;
+};
+
+function buttonSave(e) {
+    ///send pressed info "yes"
+    var JSONObject = {"choice":"yes"};
+    console.log(JSON.stringify(JSONObject));
+    window.AndroidInterface.sendToAndroidForWernickeManager(JSON.stringify(JSONObject));
+
+    $(".button").hide();
+}
+
+function buttonCancel(e) {
+    ///send pressed info "no"
+    var JSONObject = {"choice":"no"};
+    console.log(JSON.stringify(JSONObject));
+    window.AndroidInterface.sendToAndroidForWernickeManager(JSON.stringify(JSONObject));
+
+    $(".button").hide();
+}
+</script>
+
+<li>
+    <div width=100% style="background-image: url('<%= folderPath %>agent_list_bg_01.png'); ">
+        <table width=100% height="64px" cellpadding="0" cellspacing="0" style="padding: 0px 8px 0px 12px;" class="alarm_list" data-gotonewalarm='{
+                "action":"<%= data.action %>",
+                "hour":"<%= data.hour %>",
+                "minutes":"<%= data.minutes %>",
+                "daysofweek":"<%= data.weekMRF %>",
+                "enabled":"<%= data.enabled %>",
+                "memo":"<%= data.memo %>",
+                "package": "<%= data.package %>",
+                "class": "<%= data.class %>"
+            }' data-alarmaftersave='{
+                "action": "ALARMTAB",
+                "package":"<%= data.package %>",
+                "class":"com.lge.clock.AlarmClockActivity"
+        }'>
+            <tr>
+                <td>
+                   <% if(data.ampm_view && data.is_kr == "1") { %>
+                   <span class="agent_list_alarm_time_ampm"><%= data.ampm_view %>&nbsp;</span>
+                   <% } %>
+                   <span class="agent_list_alarm_time"><%= data.time_view %></span>
+                   <% if(data.ampm_view && data.is_kr == "0") { %>
+                   <span class="agent_list_alarm_time_ampm">&nbsp;<%= data.ampm_view %></span>
+                   <% } %>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-bottom:4px;"><div class="agent_list_alarm_name"><%= data.week_view %></div></td>
+            </tr>
+        </table>
+
+        <div class="button" style="background-image: url('<%= folderPath %>qvoice_command_bg.png');
+                background-size:100% 100%; height:48px;
+            <% if(data.confirm && data.cancel) {%>
+            <%} else {%>
+                display : none;
+            <%}%>
+            ">
+            <div class="alarm_btn" style="width:50%; height:100%; valign:middle; float:left; text-align:center;"
+                    onclick="buttonCancel(event);">
+                <span class="agent_list_01" style="position:relative; top: 30%;"><%= data.cancel %></span>
+            </div>
+            <div class="alarm_btn" style="width:50%; height:100%; valign:middle; float:right; text-align:center;"
+                    onclick="buttonSave(event);">
+                <span class="agent_list_01" style="position:relative; top: 30%;"><%= data.confirm %></span>
+            </div>
+        </div>
+    </div>
+</li>

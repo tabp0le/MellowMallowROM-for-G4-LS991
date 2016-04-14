@@ -1,0 +1,108 @@
+<script>
+var pressed_contactbg_imgae = 'url(' + folderPath + 'agent_list_bg_pressed.png)';
+var org_contactbg_image;
+var is_same_name; 
+var pressed_status = false;
+
+$(".contact_search").on('touchstart',function(e){
+    org_contactbg_image =  $(e.currentTarget).css('background-image');
+    $(e.currentTarget).css('background-image', pressed_contactbg_imgae);
+    pressed_status = true;
+
+    return true;
+});
+
+$(".contact_search").on('touchmove',function(e){
+    $(e.currentTarget).css('background-image', org_contactbg_image);
+    pressed_status = false;
+
+    return true;
+});
+
+$(".contact_search").on('touchend',function(e){
+    if(pressed_status){
+        $(e.currentTarget).css('background-image', org_contactbg_image);
+
+        var info = $(e.currentTarget).data('contactinfo');
+        console.log(JSON.stringify(info));
+        if (is_same_name != 1) {
+            info["index"] = info["index"] - 1;
+            if (info["index"] < 0) {
+                return true;
+            }
+        }
+        //send pressed info "send"
+        window.AndroidInterface.sendToAndroidForWernickeManager(JSON.stringify(info));
+    }
+    return true;
+});
+
+$('body').animate({ scrollTop:0},500);
+
+</script>
+
+<li style="background-image: url('<%= folderPath %>agent_list_bg_01.png') ; color:#EAEAEA; ">
+    <% 
+       var is_first_number;
+       _.each( data, function(listItem, index){ %>
+        <div class="contact_search" data-contactinfo='{"index":"<%= index %>"}' >
+        <% if ((listItem.name) && !(listItem.number || listItem.email)) { is_same_name = 0; %>
+            <table class="contact_name" border="0" width=100%  style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 15px;">
+                <tr  valign="center">
+                    <td style="padding-left: 2px; padding-right: 10px; padding-top: 10px; text-align:left;"><span class="agent_list_01"><%= listItem.name %></span></td>
+                </tr>
+     <!--            <tr>
+                    <td colspan=2 width=100%><img src="../res/agent_contact_line.png" height=2px align=top width=100%></td>
+                </tr> -->
+            </table>
+        <% } else if (listItem.name) { is_same_name = 1; %>
+            <table class="contact_name" border="0" width=100% cellspacing="0" style="padding-left: 10px; padding-right: 10px; padding-top: 8px; padding-bottom: 2px;">
+                <tr  valign="bottom">
+                    <td style="padding-left: 2px; padding-right: 10px; text-align:left;"><span class="agent_list_01"><%= listItem.name %></span></td>
+                </tr>
+     <!--            <tr>
+                    <td colspan=2 width=100%><img src="../res/agent_contact_line.png" height=2px align=top width=100%></td>
+                </tr> -->
+            </table>		
+	    <% } %>
+        <% if ((listItem.number) && (listItem.name)) { is_same_name = 1; %>
+        <table border="0" width=100% cellspacing="0" style="padding-left: 10px; padding-right: 10px; padding-top: 0px; padding-bottom: 8px;">
+           <tr valign="top">
+                <td width = 100% style="padding-left: 2px; text-align:left;"> <span class="agent_list_sub_01"><%= listItem.number %></span></td>
+            </tr> 
+        </table>
+        <% } else if ((listItem.number) && !(listItem.name)) { is_same_name = 0;   %>
+        <table border="0" width=100% style="padding-left: 10px; padding-right: 10px; padding-top: 5px;padding-bottom: 5px;">
+           <tr valign="center">
+               <td width = 100% style="padding-left: 2px; text-align:left;"> <span class="agent_list_sub_01"><%= listItem.number %></span></td>
+           </tr> 
+           <tr valign="center">
+              <td width = 100% style="padding-left: 2px;  text-align:left;"><span class="agent_list_sub_02"><%= listItem.label %></span></td>
+           </tr> 
+        </table>
+        <% } %>
+        <% if ((listItem.email)  && (listItem.name)) { is_same_name = 1; %>
+        <table border="0" width=100% style="padding-left: 10px; padding-right: 10px; padding-top: 2px; padding-bottom: 2px;">
+           <tr valign="center">
+                <td width = 100% style="padding-left: 2px; text-align:left;">  <span class="agent_list_sub_01"><%= listItem.email %></span></td>
+            </tr> 
+        </table>
+        <% } else if ((listItem.email) && !(listItem.name)) { is_same_name = 0;  %>
+        <table border="0" width=100% style="padding-left: 10px; padding-right: 10px; padding-top: 5px;padding-bottom: 5px;">
+           <tr valign="center">
+                <td width = 100% style="padding-left: 2px; text-align:left;"> <span class="agent_list_sub_01"><%= listItem.email %></span></td>
+            </tr> 
+            <tr valign="center">
+                <td width = 100% style="padding-left: 2px;  text-align:left;"><span class="agent_list_sub_02"><%= listItem.label %></span></td>
+            </tr> 
+        </table>
+        <% } %>
+        </div>
+
+        <% if (data.length-1 > index) { %>
+		    <table width=100% height=1 style="background-image: url('<%= folderPath %>agent_list_line.png');"></table>
+	    <% } %>
+
+     <% }); %>
+
+</li>

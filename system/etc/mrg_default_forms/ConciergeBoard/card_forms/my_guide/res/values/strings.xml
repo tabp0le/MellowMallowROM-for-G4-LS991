@@ -1,0 +1,20 @@
+<resources>
+
+    <string name="new_feature_summary">Explore the brand-new features of your phone using the mobile experience guide.</string>
+    <string name="guide_summary">Get the most out of the mobile experience with this guide.</string>
+    <string name="smart_world_summary">Check out LG SmartWorld Customization updates.</string>
+    <string name="smart_world_event_summary">Check out and join new LG SmartWorld events.</string>
+    <string name="promotion_event_summary">Check out useful info updates.</string>
+    <string name="os_upgrade_summary">Preview new features in OS upgrade.</string>
+    <string name="new_model_summary">Get something new for your latest LG phone.</string>
+    <string name="new_feature_source">Videos available</string>
+    <string name="guide_source">Useful guide to features not yet used.</string>
+    <string name="smart_world_source">Customization updated</string>
+    <string name="smart_world_event_source">Events updated</string>
+    <string name="promotion_event_source">New updates from LG available</string>
+    <string name="os_upgrade_source">OS upgrade to be released</string>
+    <string name="new_model_source">News about LG phones available</string>
+    <string name="go_to_smart_tips">Go to Smart Tips</string>
+	<string name="software_upgrade_summary">Preview new features in software upgrade.</string>
+	<string name="software_upgrade_source">Software upgrade to be released</string>
+</resources>

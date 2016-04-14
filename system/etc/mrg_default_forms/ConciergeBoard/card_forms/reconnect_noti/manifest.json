@@ -1,0 +1,26 @@
+{
+	"template":"default",
+	"db_key":"concierge_redial_recommend",
+	"card_icon":["ic_smartnotice_call.png","ic_smartnotice_call.png"],
+	"summary":"[@string/call_received]",
+	"source":"[@param/source_text]",
+	"buttons":[
+		{
+			"text":"[@string/show_later]",
+			"actions":[
+				"[@card/action_remind]"
+			]
+		},
+		{
+			"text":"[@string/call]",
+			"actions":[
+				"[@card/action_call]"
+			]
+		}
+	],
+	"wearable": {
+		"type":"normal",
+		"buttonIdxs":["0","1"],
+		"icons":["call","msg"]
+	}
+}

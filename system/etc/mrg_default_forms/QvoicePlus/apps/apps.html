@@ -1,0 +1,56 @@
+<script>
+//---------------------------------------------------------------------------------------------------
+// apps touch event
+
+var pressed_bg_imgae = 'url(' + folderPath + 'agent_list_bg_pressed.png)';
+var origin_bg_image;
+var pressed_status = false;
+
+$(".applist").on('touchstart',function(e){
+	if (!pressed_status) {
+		origin_bg_image =  $(e.currentTarget).css('background-image');
+		$(e.currentTarget).css('background-image', pressed_bg_imgae);
+		pressed_status = true;
+	}
+    return true;
+});
+
+$(".applist").on('touchmove',function(e){
+    $(e.currentTarget).css('background-image', origin_bg_image);
+    pressed_status = false;
+    return true;
+});
+
+$(".applist").on('touchend',function(e){
+    $(e.currentTarget).css('background-image', origin_bg_image);
+    var info= $(e.currentTarget).data('applistinfo');
+    console.log(JSON.stringify(info));
+    window.AndroidInterface.sendToAndroidForStartActivity(JSON.stringify(info));
+	pressed_status = false;
+    return true;
+});
+</script>
+<style type="text/css">
+table.applist {
+	background:url("<%= folderPath %>agent_list_bg_01.png");
+}
+</style>
+
+<li>
+	<% _.each( data, function(listItem, index){ %>
+		<div>
+		<table class="applist" width=100% height="64" valign="center" style="padding-left:8px; padding-right:12px;"
+		data-applistinfo='{
+			"launch": "<%= listItem.package %>"
+		}'>
+			<tr>
+				<td width="35" style="background-position:center center; background-repeat:no-repeat; background-size:35px; background-image: url('<%= listItem.app_icon_path %>');"></td>
+				<td><span class="agent_list_01" style="padding-left:12px;"><%= listItem.name %></span></td>
+			</tr>
+		</table>
+		<% if (data.length-1 > index) { %>
+			<table width=100% height=1 style="background-image: url('<%= folderPath %>agent_list_line.png');"></table>
+		<% } %>
+		</div>
+	<% }); %>
+</li>

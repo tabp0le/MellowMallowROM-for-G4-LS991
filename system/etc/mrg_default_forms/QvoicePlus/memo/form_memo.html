@@ -1,0 +1,117 @@
+<script>
+//---------------------------------------------------------------------------------------------------
+//fmemo line & click event
+
+var pressed_fmemoLine_imgae = "url("+folderPath+"agent_list_bg_pressed.png)";
+var org_fmemoLine_image;
+
+$(".fmemoLine").on('touchstart',function(e){
+    org_fmemoLine_image =  $(e.currentTarget).css('background-image');
+    $(e.currentTarget).css('background-image', pressed_fmemoLine_imgae);
+
+    return true;
+});
+
+$(".fmemoLine").on('touchmove',function(e){
+    $(e.currentTarget).css('background-image', org_fmemoLine_image);
+    return true;
+});
+
+$(".fmemoLine").on('touchend',function(e){
+    $(e.currentTarget).css('background-image', org_fmemoLine_image);
+
+    var info= $(e.currentTarget).data('gotomemo');
+
+    console.log(JSON.stringify(info));
+    window.AndroidInterface.sendToAndroidForMemoStartActivity(JSON.stringify(info));
+    return true;
+});
+//---------------------------------------------------------------------------------------------------
+//fmemo button & click event
+
+var pressed_button_image = "url("+folderPath+"agent_list_btn_pressed.png)";
+var org_button_image;
+
+$(".memobtn").on('touchstart',function(e){
+    org_button_image =  $(e.currentTarget).css('background-image');
+    $(e.currentTarget).css('background-image', pressed_button_image);
+
+    return true;
+});
+
+$(".memobtn").on('touchmove',function(e){
+    $(e.currentTarget).css('background-image', org_button_image);
+
+    return true;
+});
+
+$(".memobtn").on('touchend',function(e){
+    $(e.currentTarget).css('background-image', org_button_image);
+
+    return true;
+});
+
+function TypeClass (v, value) {
+   this.type = v;
+   this.value = value;
+};
+
+function buttonConfirm(e) {
+    $(".button").css('display','none');
+    var text_memo = $("input[name='memo_text']").val();
+
+    var JSONObject = {"choice":"yes"};
+    console.log(JSON.stringify(JSONObject));
+    window.AndroidInterface.sendToAndroidForWernickeManager(JSON.stringify(JSONObject));
+}
+
+function buttonCancel(e) {
+    $(".button").css('display','none');
+    var JSONObject = {"choice":"no"};
+    console.log(JSON.stringify(JSONObject));
+    window.AndroidInterface.sendToAndroidForWernickeManager(JSON.stringify(JSONObject));
+}
+
+</script>
+
+<li>
+    <div width=100% style="background-image: url('<%= folderPath %>agent_list_bg_01.png'); " class="fmemo" >
+        <table class="fmemoLine" width=100% height="64px" data-gotomemo='{
+            "action_edit": "<%= data.action_edit %>",
+            "action_save": "<%= data.action_list %>",
+            "package": "<%= data.package %>",
+            "contents": "<%= data.contents %>",
+            "location_name": "<%= data.location_name %>",
+            "latitude": "<%= data.latitude %>",
+            "longitude": "<%= data.longitude %>"
+        }' >
+            <tr>
+                <td colspan="2" style="padding: 10px;">
+                    <span class="agent_list_01" style="width:100%; border:none; background-color: transparent; display: inline-block; word-break:break-all;">
+                            <%= data.contents %>
+                    </span>
+                </td>
+            </tr>
+            <% if(data.location_name) { %>
+            <tr>
+                <td colspan="2" style="padding: 10px; "><input type="text" name="memo_text" value="<%= data.location_view %><%= data.location_name %>" style="width:100%; border:none; font-size: 20px; color:#FFFFFF; background-color: transparent;" align="center"></td>
+            </tr>
+            <%}%>
+        </table>
+        <div class="button" style="background-image: url('<%= folderPath %>qvoice_command_bg.png');
+                background-size:100% 100%; height:48px;
+            <% if(data.confirm && data.cancel) { %>
+            <%} else {%>
+                display : none;
+            <%}%> ">
+            <div class="memobtn" style="width:50%; height:100%; valign:middle; float:left; text-align:center;"
+                    onclick="buttonCancel(event);">
+                <span class="agent_list_01" style="position:relative; top: 30%;"><%= data.cancel %></span>
+            </div>
+            <div class="memobtn" style="width:50%; height:100%; valign:middle; float:right; text-align:center;"
+                    onclick="buttonConfirm(event);">
+                <span class="agent_list_01" style="position:relative; top: 30%;"><%= data.confirm %></span>
+            </div>
+        </div>
+    </div>
+</li>

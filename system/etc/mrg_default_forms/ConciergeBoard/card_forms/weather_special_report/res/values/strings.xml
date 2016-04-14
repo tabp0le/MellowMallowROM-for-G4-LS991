@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="weather_alert">Alert</string>
+    <string name="effective_time">Effective from</string>
+    <string name="ok">OK</string>
+
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="card_setting_life_space">Smart Bulletin </string>
+    <string name="smartbulletin_summary">Add an extra Home screen showing customized info.</string>
+    <string name="btn_move_homescreen_settings">Go to Home screen settings</string>
+
+</resources>

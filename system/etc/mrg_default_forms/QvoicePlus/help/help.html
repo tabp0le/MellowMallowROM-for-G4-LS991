@@ -1,0 +1,259 @@
+<script type="text/javascript">
+	//---------------------------------------------------------------------------------------------------
+	// bg & click event
+	var pressed_fhelpbg_imgae = 'url(' + folderPath + 'agent_list_bg_pressed.png)';
+	var org_fhelpbg_image;
+	var pressed_status = false;
+	var JSONObject;
+
+	$(".list_common").on('touchstart', function(e) {
+		if (!pressed_status) {
+			org_fhelpbg_image = $(e.currentTarget).css('background-image');
+
+			$(e.currentTarget).css('background-image', pressed_fhelpbg_imgae);
+			pressed_status = true;
+		}
+		return true;
+	});
+
+	$(".list_common").on('touchmove', function(e) {
+		$(e.currentTarget).css('background-image', org_fhelpbg_image);
+		pressed_status = false;
+		return true;
+	});
+
+	$(".list_common").on('touchend', function(e) {
+		$(e.currentTarget).css('background-image', org_fhelpbg_image);
+		pressed_status = false;
+		return true;
+	});
+
+	function showSub(index, element) {
+		var talkback =element.querySelector("#arrow").getAttribute('data-talkback');
+
+		console.log(JSON.stringify("showSub = " + index));
+		var visible = "none";
+		if (element.querySelector("#subTable").style.display==visible) {
+			visible = "";
+		}
+		console.log(JSON.stringify("display = " + element.querySelector("#subTable").style.display));
+		element.querySelector("#subTable").style.display = visible;
+
+		var updown = element.querySelector("#arrow").className;
+		console.log(JSON.stringify("arrow = " + updown));
+		if (updown == "arrow_down") {
+			element.querySelector("#arrow").setAttribute("aria-label",JSON.parse(talkback)["talkback_arrow_fold"]);
+			element.querySelector("#title").setAttribute("aria-label",JSON.parse(talkback)["talkback_title_fold"]);
+			element.querySelector("#arrow").className = "arrow_up";
+			scrollingUp(element);
+		} else {
+			element.querySelector("#arrow").setAttribute("aria-label",JSON.parse(talkback)["talkback_arrow_unfold"]);
+			element.querySelector("#title").setAttribute("aria-label",JSON.parse(talkback)["talkback_title_unfold"]);
+			element.querySelector("#arrow").className = "arrow_down";
+		}
+	}
+	function showHelp() {
+		var info={
+			"action": "com.lge.qvoiceplus.action.HELP_GUIDE"
+		};
+		window.AndroidInterface.sendToAndroidForStartActivity(JSON.stringify(info));
+	}
+
+	function scrollingUp(element) {
+		element.scrollIntoView();
+		//scrolldelay = setTimeout('scrollIntoView()',100); // scrolls every 100 milliseconds
+}
+$('body').animate({ scrollTop:0},500);
+</script>
+<style type="text/css">
+td.arrow_down{
+	background:url("<%= folderPath %>agent_list_btn_arrow_down_normal.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:39.5px;
+}
+td.arrow_down:active {
+	background:url("<%= folderPath %>agent_list_btn_arrow_down_pressed.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:39.5px;
+}
+
+td.arrow_up{
+	background:url("<%= folderPath %>agent_list_btn_arrow_up_normal.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:39.5px;
+}
+td.arrow_up:active {
+	background:url("<%= folderPath %>agent_list_btn_arrow_up_pressed.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:39.5px;
+}
+
+tr.list_common {
+	background:url("<%= folderPath %>agent_list_bg_01.png");
+}
+
+tr.list_sub{
+	background:url("<%= folderPath %>agent_list_bg_03.png");
+}
+tr.list_sub:hover{
+	background:url("<%= folderPath %>agent_list_bg_pressed_02.png");
+}
+tr.list_line{
+	background:url("<%= folderPath %>agent_list_line_02.png");
+}
+span.agent_list_info{
+    font-size : 14px;
+    color: #8d98ae;
+    font-weight : bold;
+}
+
+</style>
+<li id="helpTop">
+	<!-- more... -->
+	<% _.each( data, function(listItem, index){
+		if (listItem.example_message != null || listItem.example_more != null) {
+			console.log("index=" + index);
+			console.log("example_message:" + listItem.example_message);
+			console.log("example_more:" + listItem.example_more);
+		%>
+		<div>
+		<table width=100% style="border-spacing:0;">
+		<tr>
+			<td style="padding:12px; "><span class="agent_list_01" id="message">
+				<%= listItem.example_message %> &nbsp; <u class="agent_more" align="right" onclick="showHelp()"><%= listItem.example_more %></u>
+			</span></td>
+		</tr>
+		</table>
+		</div>
+		<% }
+	}); %>
+
+	<!-- QVoice+ examples -->
+	<% var firstLine = true;
+	_.each( data, function(listItem, index){
+		if (listItem.example_message == null && listItem.example_more == null
+			&& listItem.engine_name == null && listItem.engine_message == null) {
+			console.log("index=" + index);
+			console.log("text:" + listItem.text);
+		%>
+		<div class="fhelp" onclick="showSub(<%= index %>, this)">
+		<% if (!firstLine) { %>
+			<table width=100% height=1px style="border-spacing:0; background-image: url('<%= folderPath %>agent_list_line.png');"></table>
+		<% } else {
+			firstLine = false;
+		}
+		%>
+		<table width=100% style="border-spacing:0; " >
+			<tr class="list_common" height=64 valign="center">
+				<td style="padding-left:12px;" id="title" aria-label="<%= listItem.talkback_title_unfold %>"><span class="agent_list_01"><%= listItem.text %></span></td>
+				<td style="padding-left:8px; padding-right:8px;" id="arrow" class="arrow_down" aria-label="<%= listItem.unfold %>" data-talkback='{
+					"talkback_arrow_fold":"<%= listItem.fold %>",
+					"talkback_arrow_unfold":"<%= listItem.unfold %>",
+					"talkback_title_fold":"<%= listItem.talkback_title_fold %>",
+					"talkback_title_unfold":"<%= listItem.talkback_title_unfold %>"
+					}' width=39.5 align="right"/>
+			</tr>
+			<table width=100% id="subTable" style='display:none; border-spacing:0;'>
+				<%
+				for (var i=1; i < 10; i++) {
+					var subtitleKey = "subtitle" + i;
+					var subtitle = listItem[subtitleKey];
+					if (subtitle != null) { %>
+						<tr width=100% height=48px style="background-image: url('<%= folderPath %>agent_index_bg_02.png');"><td style="padding:0px 12px 0px 32px;" colspan=2>
+							<span class="agent_list_info"><%= subtitle %></span>
+						</td></tr>
+					<% } else if (i > 1) {
+						break;
+					}
+
+					for (var j=1; j < 10; j++) {
+						var subtextKey = "subtitle" + i + "_text" + j;
+						var subtext = listItem[subtextKey];
+						if (subtext != null) {
+							if (j > 1 || subtitle == null) { %>
+								<tr class="list_line" height=1px width=100% ><td height=0px style="padding:0px;" colspan=2/></tr>
+							<% } %>
+							<tr class="list_sub" width=100% height=64px ><td colspan=2 style="padding:0px 12px 0px 32px;">
+								<span class="agent_list_01"><%= subtext %></span>
+							</td></tr>
+						<% } else {
+							break;
+						}
+					} %>
+				<% } %>
+			</table>
+		</table>
+		</div>
+
+		<% }
+	}); %>
+
+	<!-- Maluuba examples -->
+	<% var firstLine = true;
+	_.each( data, function(listItem, index){
+		if (listItem.engine_name != null || listItem.engine_message != null) {
+			console.log("engine_name:" + listItem.engine_name);
+			console.log("engine_message:" + listItem.engine_message);
+			console.log("index=" + index);
+			if (firstLine) {
+				firstLine = false; %>
+				<table width=100% style="border-spacing:0; ">
+					<tr valign="center">
+						<td height=64px style="padding:0px 4px;">
+						<span class="agent_list_sub_01"><%= listItem.engine_message %> </span>
+						<img style="height:24.5px; width:auto;" src="<%= folderPath %>agent_list_image_maluuda.png" valign="middle"/>
+						</td>
+					</tr>
+				</table>
+			<% } else { %>
+				<table width=100% height=1px style="background-image: url('<%= folderPath %>agent_list_line_02.png');"></table>
+			<% } %>
+		<div class="fhelp" onclick="showSub(<%= index %>, this)">
+		<table width=100% style="border-spacing:0; ">
+				<tr class="list_common" height=64 valign="center">
+					<td style="padding-left:12px;" id="title" aria-label="<%= listItem.talkback_title_unfold %>"><span class="agent_list_01"><%= listItem.text %></span></td>
+					<td style="padding-left:8px; padding-right:8px;" id="arrow" class="arrow_down" aria-label="<%= listItem.unfold %>" data-talkback='{
+						"talkback_arrow_fold":"<%= listItem.fold %>",
+						"talkback_arrow_unfold":"<%= listItem.unfold %>",
+						"talkback_title_fold":"<%= listItem.talkback_title_fold %>",
+						"talkback_title_unfold":"<%= listItem.talkback_title_unfold %>"
+						}' width=39.5 align="right"/>
+				</tr>
+			<table width=100% id="subTable" style="border-spacing:0; display:none;">
+				<%
+				for (var i=1; i < 10; i++) {
+					var subtitleKey = "subtitle" + i;
+					var subtitle = listItem[subtitleKey];
+					if (subtitle != null) { %>
+						<tr width=100% height=48px style="background-image: url('<%= folderPath %>agent_index_bg_02.png');"><td style="padding:0px 12px 0px 32px;" colspan=2>
+							<span class="agent_list_info"><%= subtitle %></span>
+						</td></tr>
+					<% } else if (i > 1) {
+						break;
+					}
+
+					for (var j=1; j < 10; j++) {
+						var subtextKey = "subtitle" + i + "_text" + j;
+						var subtext = listItem[subtextKey];
+						if (subtext != null) {
+							if (j > 1 || subtitle == null) { %>
+								<tr class="list_line" height=1px width=100%><td height=0px style="padding:0px;" colspan=2/></tr>
+							<% } %>
+							<tr class="list_sub" width=100% height=64px ><td colspan=2 style="padding:0px 12px 0px 32px;">
+								<span class="agent_list_01"><%= subtext %></span>
+							</td></tr>
+						<% } else {
+							break;
+						}
+					} %>
+				<% } %>
+			</table>
+		</table>
+		</div>
+	<% 	}
+	}); %>
+</li>

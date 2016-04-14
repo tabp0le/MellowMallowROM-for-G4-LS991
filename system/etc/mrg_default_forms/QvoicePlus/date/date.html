@@ -1,0 +1,61 @@
+<script>
+//---------------------------------------------------------------------------------------------------
+// fdate line & click event
+
+var pressed_bg_imgae = 'url(' + folderPath + 'agent_list_bg_pressed.png)';
+var origin_bg_image;
+var pressed_status = false;
+
+$(".fdateline").on('touchstart',function(e){
+	if (!pressed_status) {
+		origin_bg_image =  $(e.currentTarget).css('background-image');
+		$(e.currentTarget).css('background-image', pressed_bg_imgae);
+		pressed_status = true;
+	}
+    return true;
+});
+
+$(".fdateline").on('touchmove',function(e){
+    $(e.currentTarget).css('background-image', origin_bg_image);
+	pressed_status = false;
+    return true;
+});
+
+$(".fdateline").on('touchend',function(e){
+    $(e.currentTarget).css('background-image', origin_bg_image);
+    var info= $(e.currentTarget).data('fdatelineinfo');
+    console.log(JSON.stringify(info));
+    window.AndroidInterface.sendToAndroidForStartActivity(JSON.stringify(info));
+	pressed_status = false;
+    return true;
+});
+</script>
+<style type="text/css">
+table.fdateline {
+	background:url("<%= folderPath %>agent_list_bg_01.png");
+}
+</style>
+
+<li>
+    <% _.each( data, function(listItem, index){ %>
+        <div>
+        <table class="fdateline" width=100% height="64" valign="center" style="padding-left:12px; padding-right:12px;"
+		data-fdatelineinfo='{
+            "action": "<%= listItem.action %>",
+            "uri": "<%= listItem.uri %>",
+            "VIEW":"<%= listItem.VIEW %>"
+        }'>
+            <tr>
+                <td width="1px"><span class="agent_list_alarm_time"><%= listItem.day_view %></span></td>
+				<td style="padding-left:15px;">
+					<span class="agent_list_01"><%= listItem.week_view %></span><br>
+					<span class="agent_list_sub_02"><%= listItem.date_view %></span>
+				</td>
+            </tr>
+        </table>
+		<% if (data.length-1 > index) { %>
+			<table width=100% height=1 style="background-image: url('<%= folderPath %>agent_list_line.png');"></table>
+		<% } %>
+        </div>
+    <% }); %>
+</li>

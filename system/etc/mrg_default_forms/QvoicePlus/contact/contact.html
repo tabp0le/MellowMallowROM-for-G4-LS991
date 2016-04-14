@@ -1,0 +1,190 @@
+<script>
+//---------------------------------
+var pressed_msgbtn_color = '#454e5e';
+var org_msgbtn_color;
+
+$(".zz").on('touchstart',function(e){
+    org_msgbtn_color =  $(e.currentTarget).css('background-color');
+    $(e.currentTarget).css({
+         'background-color':pressed_msgbtn_color,
+         'opacity':'1'
+     });
+    return true;
+});
+
+$(".zz").on('touchmove',function(e){
+    $(e.currentTarget).css({
+         'background-color':org_msgbtn_color,
+         'opacity':'1'
+     });
+    return true;
+});
+
+$(".zz").on('touchend',function(e){
+    $(e.currentTarget).css({
+         'background-color':org_msgbtn_color,
+         'opacity':'1'
+     });
+    return true;
+});
+
+var img_src_message_pressed = folderPath + "agent_contact_btn_message_pressed.png";
+var img_src_message_normal = folderPath + "agent_contact_btn_message_normal.png";
+var img_src_email_pressed = folderPath + "agent_contact_btn_email_pressed.png";
+var img_src_email_normal = folderPath + "agent_contact_btn_email_normal.png";
+
+//----------Message-BUTTON----------------------
+$(".messageimg").on('touchstart',function(e){
+     $(e.currentTarget).attr("src", img_src_message_pressed);
+  return true;
+});
+
+$(".messageimg").on('touchmove',function(e){
+    $(e.currentTarget).attr("src", img_src_message_normal);
+  return true;
+});
+
+$(".messageimg").on('touchend',function(e){
+    $(e.currentTarget).attr("src", img_src_message_normal);
+  return true;
+});
+
+//----------Email-BUTTON----------------------
+$(".emailimg").on('touchstart',function(e){
+     $(e.currentTarget).attr("src", img_src_email_pressed);
+  return true;
+});
+
+$(".emailimg").on('touchmove',function(e){
+    $(e.currentTarget).attr("src", img_src_email_normal);
+  return true;
+});
+
+$(".emailimg").on('touchend',function(e){
+    $(e.currentTarget).attr("src", img_src_email_normal);
+  return true;
+});
+
+function TypeClass (v, value) {
+       this.type = v;
+       this.value = value;
+    };
+
+$(".contact_name").on('click',function(e){
+
+    var info = $(e.currentTarget).data('fcontactinfo');
+    console.log(JSON.stringify(info));
+    window.AndroidInterface.sendToAndroidForStartActivity(JSON.stringify(info));
+    return false;
+});
+$(".fcallbtn").on('click',function(e){
+
+    var info = $(e.currentTarget).data('fcallinfo');
+    console.log(JSON.stringify(info));
+    window.AndroidInterface.sendToAndroidForStartActivity(JSON.stringify(info));
+    return true;
+});
+$(".fmsgbtn").on('click',function(e){
+
+    var info = $(e.currentTarget).data('fmsginfo');
+    console.log(JSON.stringify(info));
+    window.AndroidInterface.sendToAndroidForStartActivity(JSON.stringify(info));
+    return true;
+});
+$(".femailbtn").on('click',function(e){
+
+    var info = $(e.currentTarget).data('femailinfo');
+    console.log(JSON.stringify(info));
+    window.AndroidInterface.sendToAndroidForStartActivity(JSON.stringify(info));
+    return false;
+});
+
+</script>
+
+<li id="image" style="background-image: url('<%= folderPath %>agent_list_bg_01.png') ; color:#ffffff; ">
+    <% _.each( data, function(listItem, index){ %>
+
+        <div class="contact_search" >
+        <% if(listItem.name){%>
+            <table data-fcontactinfo='{
+                "action": "android.intent.action.VIEW",
+                "uri": "<%= listItem.uri %>"
+                 }' class="contact_name" border="0" width=100% style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 0px;" >
+                <tr  valign="center">
+                    <td style="padding-left:0; padding-right: 10px; padding-top: 5px; padding-bottom: 0px;text-align:left;"><span class="agent_contact_title_01"><%= listItem.name %></span></td>
+                </tr>
+                <tr>
+                    <td colspan=2 width=100%><img src="<%= folderPath %>agent_list_line.png" height=1px align=bottom padding-bottom="0px" width=100%></td>
+                </tr>
+            </table>
+        <% } %>
+
+        <% if (listItem.number) {%>
+        <table border="0" width=100% style="padding-left: 10px; padding-right: 10px; padding-bottom: 5px; padding-top:0px" >
+            <tr >
+                <td>
+                    <table height=48px valign="center" class="zz" style="border-radius:2px; border-width:1px;"   cellspacing="0px"  bordercolor="#929caf"  width=100%>
+                        <tr >
+                            <td valign="bottom" width=80% style="padding-left: 12px; padding-bottom: 0px;word-wrap: break-word; max-width: 200px;  solid :black;
+                             width: 70px;
+                             overflow: hidden;
+                             white-space: nowrap;
+                             text-overflow: ellipsis;"><span class="agent_list_01"><%= listItem.number %></span>
+                            </td>
+
+                            <% if (listItem.call_icon == "true") {%>
+                            <td rowspan=2 width=20% data-fcallinfo='{
+                                    "action": "android.intent.action.CALL",
+                                    "uri": "tel:<%= listItem.number %>"
+                                 }' class=fcallbtn id=callbtn rowspan=2 style="padding-left: 15px; padding-right:5px;
+                                 ">
+                                 <img aria-label="<%= listItem.talkback_call %>" style="opacity: 1.0;" src="<%= folderPath %>agent_contact_icon_call.png" width=35 height=35 align="right" >
+                            </td >
+                            <% } %>
+
+                        </tr>
+                        <tr valign="center">
+                            <td  valign="center" style="padding-left: 12px; padding-top: 0px;"><div class="agent_list_sub_01" ><%= listItem.label %></div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+
+                <% if (listItem.msg_icon == "true") {%>
+                <td class=fmsgbtn id=msgbtn rowspan=2 width=15% data-fmsginfo='{
+                        "action": "android.intent.action.SENDTO",
+                        "uri": "smsto:<%= listItem.number %>"
+                        }' style="padding-right:0px; padding-left: 10px; ">
+                    <img aria-label="<%= listItem.talkback_message %>" class="messageimg"
+                            src="<%= folderPath %>agent_contact_btn_message_normal.png" width=48 height=48 align="right" >
+                </td>
+                <% } %>
+            </tr>
+        </table>
+        <% } %>
+
+        <% if (listItem.email) {%>
+        <table border="0" width=100% style="padding-left: 10px; padding-right: 10px; padding-bottom: 7px;">
+            <tr>
+                <td>
+                    <table style="border-radius:2px; border-width:1px;" cellspacing="0px" width=100% height=48px>
+                        <tr >
+                            <td valign="bottom" style="padding-left: 12px;"><div class="agent_list_01"><%= listItem.email %></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="center" style="padding-left: 12px;"><div class="agent_list_sub_01" ><%= listItem.label %></div>
+                            </td>
+                        </tr>
+                   </table>
+                </td>
+                <td rowspan=2 data-femailinfo='{"action": "android.intent.action.SENDTO","uri": "mailto:<%= listItem.email %>"}'
+                        class=femailbtn id=emailbtn rowspan=2 style="padding-right:0px; padding-left: 15px; ">
+                    <img aria-label="<%= listItem.talkback_email %>" class="emailimg" src="<%= folderPath %>agent_contact_btn_email_normal.png" width=48 height=48 align="right" >
+                </td>
+            </tr>
+        </table>
+        <% } %>
+        </div>
+    <% }); %>
+</li>

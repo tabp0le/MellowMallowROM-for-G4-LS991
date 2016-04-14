@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="today_birthday">Today is <b>[@param/name]</b>'s birthday.</string>
+    <string name="incomming_birthday"><b>[@param/name]</b>'s birthday is coming up.</string>
+    <string name="friend">Friend</string>
+    <string name="friend_lower_case">friend</string>
+    <string name="gift">Send birthday wishes.</string>
+    <string name="plan">[@param/plan_name] in Calendar</string>
+    <string name="ok">OK</string>
+
+</resources>

@@ -1,0 +1,103 @@
+<script>
+	//---------------------------------------------------------------------------------------------------
+	//setting bg & click event
+	var img_src_sound = folderPath + "agent_setting_icon_sound.png";
+	var img_src_vibrate = folderPath + "agent_setting_icon_vibrate.png";
+	var img_src_mute = folderPath + "agent_setting_icon_mute.png";
+
+	function TypeClass(v, value) {
+		this.type = v;
+		this.value = value;
+	};
+
+	var pressed_status = false;
+
+	$(".setting_list").on('touchstart', function(e) {
+
+		return true;
+	});
+
+	$(".setting_list").on('touchmove', function(e) {
+		return true;
+	});
+
+	$(".setting_list").on('touchend', function(e) {
+		var info = $(e.currentTarget).data('settinginfo');
+		var text;
+		var talkback_text;
+		pressed_status = true;
+		//   if(pressed_status){
+		if (info["device"] == "sound") {
+			info["device"] = "vibrate";
+			text = info["text_vibrate"];
+			talkback_text = info["talkback_vibrate"];
+			$("#img").attr("aria-label",talkback_text);
+			$("#img").attr("src", img_src_vibrate);
+		} else if (info["device"] == "vibrate") {
+			info["device"] = "silent";
+			text = info["text_silent"];
+			talkback_text = info["talkback_silent"];
+			$("#img").attr("aria-label",talkback_text);
+			$("#img").attr("src", img_src_mute);
+		} else if (info["device"] == "silent") {
+			info["device"] = "sound";
+			text = info["text_sound"];
+			talkback_text = info["talkback_sound"];
+			$("#img").attr("aria-label",talkback_text);
+			$("#img").attr("src", img_src_sound);
+		} else {
+
+		}
+
+		document.getElementById('current').innerText = text;
+
+		var o = new TypeClass("Integer", info["_id"]);
+		info["_id"] = o;
+
+		console.log(JSON.stringify(info));
+		window.AndroidInterface.sendToAndroidForSettings(JSON.stringify(info));
+		//  }
+		return true;
+	});
+</script>
+
+<li
+	style="background-image: url('<%= folderPath %>agent_list_bg_01.png'); color: #EAEAEA; ">
+    <% _.each( data, function(listItem, index){ 
+       var selectmode; %>
+	<div class="setting_list"
+		data-settinginfo='{
+            "device":"<%= listItem.device%>",
+            "enabled":"<%= listItem.enabled%>",
+            "_id":"<%= listItem._id%>",
+            "text_sound":"<%= listItem.text_sound%>",
+            "text_silent":"<%= listItem.text_silent%>",
+            "text_vibrate":"<%= listItem.text_vibrate%>",
+            "talkback_sound":"<%= listItem.talkback_sound%>",
+            "talkback_silent":"<%= listItem.talkback_silent%>",
+            "talkback_vibrate":"<%= listItem.talkback_vibrate%>" }'>
+		<table width=100% border=0px  height=64px >
+			<tr>
+				<td rowspan=2 width=10% align="left"; >
+					<div style="padding-left: 8px;" >
+						<% if( listItem.device== "sound" ){
+						selectmode = listItem.text_sound %>
+						 <img id="img" aria-label="<%= listItem.talkback_sound %>" src="<%= folderPath %>agent_setting_icon_sound.png"
+							style="max-width: 36px; height: auto;" valign="bottom">
+						<% } else if (listItem.device == "vibrate" ){
+						selectmode = listItem.text_vibrate %>
+						 <img id="img" aria-label="<%= listItem.talkback_vibrate %>" src="<%= folderPath %>agent_setting_icon_vibrate.png"
+							style="max-width: 36px; height: auto;" valign="bottom">
+						<% } else if (listItem.device == "silent" ){ 
+						selectmode = listItem.text_silent %>
+						 <img id="img" aria-label="<%= listItem.talkback_silent %>" src="<%= folderPath %>agent_setting_icon_mute.png"
+							style="max-width: 36px; height: auto;" valign="bottom"> <% }%>
+					</div></td>
+				<td rowspan=2 width=90% align="left"; id="current"; 
+					style="padding-left: 8px; font-size: 40px color : #ffffff;"><%= selectmode %></td>
+
+			</tr>
+
+		</table>
+
+    </div > <% }); %></li>

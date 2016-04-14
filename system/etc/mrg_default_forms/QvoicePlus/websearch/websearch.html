@@ -1,0 +1,15 @@
+<li style="background-image: url('../res/agent_list_bg_01.png') ; color:#ffffff; ">
+        <table style="padding: 10px; ">
+            <tr>
+                <td rowspan=2 style="font-size: 40px; color:#ffffff;"><%= data.hour%>:<%= data.minutes%></td>
+                <td width=60% style="font-size: 17px; color:#ffffff;"><%= data.am%></td>
+                <td rowspan=3 style="font-size: 12px; color:#ffffff;"><img src="../res/on.png" width=50 height=50 align="right"></td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan=2 style="font-size: 15px; color:#ffffff; "><%= data.dayofweek%></td>
+            </tr>
+        </table>
+</li>

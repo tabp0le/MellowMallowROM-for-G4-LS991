@@ -1,0 +1,47 @@
+<li width=100% style="background-image: url('<%= folderPath %>agent_list_bg_01.png'); ">
+<% _.each( data, function(listItem, index){ %>
+    <table width=100% style="color:#ffffff; " class="service" cellpadding="0" cellspacing="0">
+        <tr height=64px>
+            <td valign="center" style="padding-left: 12px;"><span class="agent_contact_title_01"><%= listItem.name %></span></td>
+        </tr>
+    </table>
+    <table width=93% height=1px style="margin-left: 12px; border-spacing:0; background-image: url('<%= folderPath %>agent_list_line.png');"></table>
+    <table style="height: 64px; padding-left: 12px; padding-top: 6px;" cellpadding="0" cellspacing="0">
+        <tr>
+            <td valign="bottom"><span class="agent_list_01"><%= listItem.number %></span></td>
+        </tr>
+        <tr>
+            <td valign="top"><span class="agent_list_sub_02"><%= listItem.number_label %></span></td>
+        </tr>
+    </table>
+    <% if( listItem.time_workingday ){ %>
+    <table width=93% height=1px style="margin-left: 12px; border-spacing:0; background-image: url('<%= folderPath %>agent_list_line.png');"></table>
+    <table style="height: 78px; padding-left: 12px; padding-top: 2px" cellpadding="0" cellspacing="0">
+        <tr>
+            <td><span class="agent_list_01"><%= listItem.label_workingday %></span></td>
+            <td width="15px" />
+            <td><span class="agent_list_01"><%= listItem.time_workingday %></span></td>
+        </tr>
+        <tr>
+            <td><span class="agent_list_01"><%= listItem.label_saturday %></span></td>
+            <td width="15px" />
+            <td><span class="agent_list_01"><%= listItem.time_saturday %></span></td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="3"><span class="agent_list_sub_02"><%= listItem.label_work %></span></td>
+        </tr>
+    </table>
+    <%}%>
+    <% if( listItem.address ){ %>
+    <table width=93% height=1px style="margin-left: 12px; border-spacing:0; background-image: url('<%= folderPath %>agent_list_line.png');"></table>
+    <table style="height: 64px; padding-left: 12px; padding-top: 6px;" cellpadding="0" cellspacing="0">
+        <tr>
+            <td valign="bottom"><span class="agent_list_01"><%= listItem.address %></span></td>
+        </tr>
+        <tr>
+            <td valign="top"><span class="agent_list_sub_02"><%= listItem.label_address %></span></td>
+        </tr>
+    </table>
+    <%}%>
+<% }); %>
+</li>

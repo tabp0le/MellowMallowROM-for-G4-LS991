@@ -1,0 +1,39 @@
+<script type="text/javascript">
+$('body').animate({ scrollTop:0},500);
+</script>
+
+<li id="helpTop">
+	<!-- message -->
+	<% _.each( data, function(listItem, index){
+		if (listItem.example_highlight != null) {
+		%>
+	<table width=100% style="border-spacing:0; margin-bottom: 20px;">
+	<tr>
+		<td style="padding-left:12px; ">
+			<span class="agent_list_01" id="message"> <%= listItem.example_pre %> </span>
+			<span class="agent_list_01_green" id="message"> <%= listItem.example_highlight %> </span>
+			<span class="agent_list_01" id="message"> <%= listItem.example_post %> </span>
+		</td>
+	</tr>
+	</table>
+	<% }
+	}); %>
+
+    <table width=92% height=1px style="margin-left: 15px; margin-bottom: 20px; border-spacing:0; background-image: url('<%= folderPath %>agent_list_line.png');"></table>
+
+	<!-- QVoice+ examples -->
+	<% _.each( data, function(listItem, index){
+		if (listItem.text != null) {
+		%>
+		<table width=100% style="border-spacing:0;" >
+			<tr>
+				<td width=100% align="center" id="title"><span class="agent_list_01"><%= listItem.text %></span></td>
+			</tr>
+			<tr height=19px />
+		</table>
+	<% }
+	}); %>
+
+	<table width=92% height=1px style="margin-left: 15px; border-spacing:0; background-image: url('<%= folderPath %>agent_list_line.png');"></table>
+
+</li>

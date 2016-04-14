@@ -1,0 +1,26 @@
+{
+	"template":"default",
+	"card_icon":["ic_smartnotice_birthday.png", "ic_smartnotice_birthday.png"],
+	"summary":"[@param/birthday_noti_summary] [@string/gift]",
+	"source":"[@time/mmddee,birthday] [@param/place]<br>[@string/plan]",
+	"buttons":[
+		{
+			"text":"[@string/call]",
+			"actions":[
+				"[@card/action_call]"
+			]
+		},
+		{
+			"text":"[@string/send_msg]",
+			"actions":[
+				"[@card/action_message]",
+				"concierge://go_msgcomposer?tel=[@param/phone]"
+			]
+		}
+	],
+	"wearable": {
+		"type":"normal",
+		"buttonIdxs":["0","1"],
+		"icons":["call","msg"]
+	}
+}

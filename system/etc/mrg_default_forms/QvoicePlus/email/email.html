@@ -1,0 +1,116 @@
+<script>
+var pressed_emailbg_imgae = "url("+folderPath+"agent_list_bg_pressed.png)";
+var org_emailbg_image;
+var pressed_status = false;
+
+function TypeClass(v, value) {
+    this.type = v;
+    this.value = value;
+};
+
+$(".email_search").on('touchstart',function(e){
+    org_emailbg_image =  $(e.currentTarget).css('background-image');
+    $(e.currentTarget).css('background-image', pressed_emailbg_imgae);
+    pressed_status = true;
+
+    return true;
+});
+
+$(".email_search").on('touchmove',function(e){
+    $(e.currentTarget).css('background-image', org_emailbg_image);
+    pressed_status = false;
+
+    return true;
+});
+
+$(".email_search").on('touchend',function(e){
+    if(pressed_status){
+        $(e.currentTarget).css('background-image', org_emailbg_image);
+
+        var info = $(e.currentTarget).data('emailinfo');
+
+        var originTarget = info["Target"];
+        var originAccountId = info["AccountId"];
+        var originFolderId = info["FolderId"];
+        var originMailId = info["MailId"];
+        var originMaillistType = info["MaillistType"];
+
+        var o_v1 = new TypeClass("string",info["Target"]);
+        info["Target"] = o_v1;
+        var o_v2 = new TypeClass("integer",info["AccountId"]);
+        info["AccountId"] = o_v2;
+        var o_v3 = new TypeClass("integer",info["FolderId"]);
+        info["FolderId"] = o_v3;
+        var o_v4 = new TypeClass("integer",info["MailId"]);
+        info["MailId"] = o_v4;
+        var o_v55 = new TypeClass("integer",info["MaillistType"]);
+        info["MaillistType"] = o_v55;
+        console.log(JSON.stringify(info));
+
+        window.AndroidInterface.sendToAndroidForStartActivity(JSON.stringify(info));
+        info["Target"] = originTarget;
+        info["AccountId"] = originAccountId;
+        info["FolderId"] = originFolderId;
+        info["MailId"] = originMailId;
+        info["MaillistType"] = originMaillistType;
+    }
+    return true;
+});
+
+$('body').animate({ scrollTop:0},500);
+
+</script>
+
+<li style="background-image: url('<%= folderPath %>agent_list_bg_01.png') ; ">
+    <% _.each( data, function(listItem, index){ %>
+
+        <div class="email_search" data-emailinfo='{
+                "action": "com.lge.email.action.MAILBOX_ACTIVITY",
+                "Target": "detailview",
+                "AccountId": "<%= listItem.AccountId %>",
+                "FolderId": "<%= listItem.FolderId %>",
+                "MailId": "<%= listItem.MailId %>",
+                "MaillistType": "0"
+            }' style="<% if(listItem.unread == "1") { %>
+                        background-image: url('<%= folderPath %>agent_list_bg_02.png');
+                    <% } else { %>
+                        background-image: url('<%= folderPath %>agent_list_bg_01.png');
+                    <% } %> ">
+            <table width=100% style=" padding-left: 12px; padding-right: 12px; padding-bottom: 8px; padding-top: 9px; ">
+                <tr >
+                 <td  style="padding:0px;" >
+                 <div class="agent_list_01" style="word-wrap: break-word; solid :black;
+                 overflow: hidden;
+                 white-space: nowrap;
+                 text-overflow: ellipsis; padding:0px; width:200px;"> <%= listItem.name %></div>
+                 </td>
+                 <td    style="padding:0px;align:right; " >
+                    <% if( listItem.attatchicon == "1" ){ %>
+                       <img src="<%= folderPath %>agent_list_ic_01.png" width=15 height=15 align="right">
+                    <% } %>
+                 </td >
+                 <td  width="65px"  style="font-size: 10px; color:#ffffff; text-align:right;
+                         padding-left: 0px; padding-right: 8px; padding-bottom: 0px; padding-top: 0px;">
+                     <div class="agent_list_sub_01" ><%= listItem.date %></div>
+                 </td>
+                </tr>
+                <tr >
+                    <td colspan=3 style="padding:0px;"><div class="agent_list_sub_01" style="word-wrap: break-word; solid :black;
+                 overflow: hidden;
+                 white-space: nowrap;
+                 text-overflow: ellipsis; padding:0px; width:328px;">   <%= listItem.subject %></div>
+                    </td>
+                </tr>
+                <tr >
+                  <td colspan=3 style="padding:0px;"><div class="agent_list_sub_01" style="word-wrap: break-word; solid :black;
+                 overflow: hidden;
+                 white-space: nowrap;
+                 text-overflow: ellipsis; padding:0px; width:328px;"> <%= listItem.body %></div></td>
+                </tr>
+                <% if (data.length-1 > index) { %>
+                    <table width="100%" height="1px" style="background-image: url('<%= folderPath %>agent_list_line.png'); "></table>
+                <% } %>
+            </table>
+        </div>
+    <% }); %>
+</li>

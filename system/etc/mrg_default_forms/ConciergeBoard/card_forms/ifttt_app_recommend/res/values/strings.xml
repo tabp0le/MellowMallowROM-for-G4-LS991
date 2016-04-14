@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="app_recommend_summary_earphones">Listening in [@param/app_name] with your earphones? Try using Smart settings to open [@param/app_name] when your earphones are plugged in.</string>
+    <string name="app_recommend_source_earphones">Smart setting: Open [@param/app_name] when earphones are plugged in</string>
+    <string name="app_recommend_summary_bluetooth">Opening [@param/app_name] when using your Bluetooth device? Try using Smart settings to open [@param/app_name] when your Bluetooth device is connected.</string>
+    <string name="app_recommend_source_bluetooth">Paired device: [@param/device_name]<br/>Smart setting: Open [@param/app_name] when connected to Bluetooth device</string>
+
+    <string name="go_to_Smart_settings">Go to Smart settings</string>
+    <string name="package_title">Smart settings</string>    
+
+</resources>

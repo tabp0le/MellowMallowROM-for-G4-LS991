@@ -1,0 +1,20 @@
+{
+	"template":"default",
+	"card_icon":["ic_smartnotice_tip.png", "ic_smartnotice_tip.png"],
+	"summary":"[@param/summary]",
+	"source":"[@param/source]",
+	"buttons":[
+		{
+			"text":"[@string/throttle_help]",
+			"actions":[
+				"[@card/action_accept]",
+				"[@param/action_uri]"
+			]
+		}
+	],
+	"wearable": {
+		"type":"normal",
+		"buttonIdxs":["0"],
+		"icons":["goto"]
+	}
+}

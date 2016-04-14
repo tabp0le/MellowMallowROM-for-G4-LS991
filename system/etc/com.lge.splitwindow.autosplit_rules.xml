@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lge.splitwindow.autosplit_rules>
+    <case case="autosplit">
+        <statepair tag="streaming">
+            <state
+                act="android.intent.action.VIEW"
+                typ="video/*"
+                scm="*"
+                pkg="*"
+                cls="*" />
+            <state all="*" />
+        </statepair>
+        <statepair tag="web_secure">
+            <state
+                act="android.intent.action.VIEW"
+                typ="*"
+                scm="https"
+                pkg="*"
+                cls="*" />
+            <state all="*"/>
+        </statepair>
+        <statepair tag="web">
+            <state
+                act="android.intent.action.VIEW"
+                typ="*"
+                scm="http"
+                pkg="*"
+                cls="*" />
+            <state all="*" />
+        </statepair>
+        <statepair tag="web_rtsp">
+            <state
+                act="android.intent.action.VIEW"
+                typ="*"
+                scm="rtsp"
+                pkg="*"
+                cls="*" />
+            <state all="*" />
+        </statepair>
+        <statepair tag="web_secure_HTML5">
+            <state
+                act="lge.browser.intent.action.HTML5VIDEO_STREAMING_PLAY"
+                typ="*"
+                scm="https"
+                pkg="*"
+                cls="*" />
+            <state all="*"/>
+        </statepair>
+        <statepair tag="web_HTML5">
+            <state
+                act="lge.browser.intent.action.HTML5VIDEO_STREAMING_PLAY"
+                typ="*"
+                scm="http"
+                pkg="*"
+                cls="*" />
+            <state all="*" />
+        </statepair>
+        <statepair tag="web_rtsp_HTML5">
+            <state
+                act="lge.browser.intent.action.HTML5VIDEO_STREAMING_PLAY"
+                typ="*"
+                scm="rtsp"
+                pkg="*"
+                cls="*" />
+            <state all="*" />
+        </statepair>
+        <statepair tag="youtube">
+            <state
+                act="android.intent.action.VIEW"
+                typ="*"
+                scm="vnd.youtube"
+                pkg="*"
+                cls="*" />
+            <state all="*" />
+        </statepair>
+        <statepair tag="map">
+            <state
+                act="android.intent.action.VIEW"
+                typ="*"
+                scm="*"
+                pkg="com.google.android.apps.maps"
+                cls="com.google.android.maps.MapsActivity" />
+            <state all="*" />
+        </statepair>
+        <statepair tag="image">
+            <state
+                act="android.intent.action.VIEW"
+                typ="image/*"
+                scm="*"
+                pkg="*"
+                cls="*" />
+            <state all="*" />
+        </statepair>
+        <statepair tag="pdf">
+            <state
+                act="android.intent.action.VIEW"
+                typ="application/pdf"
+                scm="*"
+                pkg="*"
+                cls="*" />
+            <state all="*" />
+        </statepair>
+        <statepair tag="xls_n_doc">
+            <state
+                act="android.intent.action.VIEW"
+                typ="application/vnd.openxmlformats"
+                scm="*"
+                pkg="*"
+                cls="*" />
+            <state all="*" />
+        </statepair>
+        <statepair tag="ppt">
+            <state
+                act="android.intent.action.VIEW"
+                typ="application/vnd.ms-powerpoint"
+                scm="*"
+                pkg="*"
+                cls="*" />
+            <state all="*" />
+        </statepair>
+    </case>
+    <case case="exclude_target">
+        <state all="null" />
+        <state
+            act="*"
+            typ="*"
+            scm="*"
+            pkg="android"
+            cls="*" />
+        <state
+            act="*"
+            typ="video/*"
+            scm="file"
+            pkg="*"
+            cls="*" />
+        <state
+            act="*"
+            typ="video/*"
+            scm="content"
+            pkg="*"
+            cls="*" />
+        <state
+            act="*"
+            typ="*"
+            scm="*"
+            pkg="com.vodafone.vodafone360updates"
+            cls="*" />
+    </case>
+    <case case="exclude_source">
+        <state all="null" />
+        <state
+            act="*"
+            typ="*"
+            scm="*"
+            pkg="com.android.launcher"
+            cls="*" />
+        <state
+            act="*"
+            typ="*"
+            scm="*"
+            pkg="com.google.android.googlequicksearchbox"
+            cls="*" />
+        <state
+            act="*"
+            typ="*"
+            scm="*"
+            pkg="com.kakao.talk"
+            cls="com.kakao.talk.activity.media.gallery.ChatRoomMediaGalleryActivity" />
+    </case>
+    <case case="special_source">
+        <state
+            act="*"
+            typ="*"
+            scm="*"
+            pkg="android"
+            cls="com.android.internal.app.ChooserActivity" />
+        <state
+            act="*"
+            typ="*"
+            scm="*"
+            pkg="android"
+            cls="com.android.internal.app.ResolverActivity" />
+    </case>
+</com.lge.splitwindow.autosplit_rules>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<onActivityResult>
+    <!-- sample -->
+    <!--package name="com.example.edittextsample">
+        <item>"1;image/*"</item>
+        <item>"2;audio/*"</item>
+    </package-->
+    <!-- Kakao Talk -->
+    <!--package name="com.kakao.talk">
+        <item>"101;image/*"</item>
+    </package-->
+    <!-- Twitter -->
+    <!--activity name="com.twitter.android.PostActivity">
+        <item>"1;image/*"</item>
+    </activity-->
+    <!-- Line -->
+    <activity name="jp.naver.line.android.activity.chathistory.ChatHistoryActivity">
+        <item>"4;image/*"</item>
+    </activity>
+</onActivityResult>

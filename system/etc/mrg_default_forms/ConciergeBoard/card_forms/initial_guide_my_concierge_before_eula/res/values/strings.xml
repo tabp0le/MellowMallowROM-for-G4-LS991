@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="my_concierge_new">What’s new with Smart Notice</string>
+    <string name="smart_notice_summary">Smart Notice shows useful cards based on the time of day, your location, and how you usually use your phone.</string>
+    <string name="btn_start_concierge">Start Smart Notice</string>
+
+</resources>

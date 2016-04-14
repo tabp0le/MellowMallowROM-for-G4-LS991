@@ -1,0 +1,16 @@
+{  
+    "template":“default",
+    "card_icon":["ic_smartnotice_alert.png",
+	"ic_smartnotice_alert.png"],
+  
+	"summary":"[@string/title_text]",
+	"source":"[@string/source_text]",
+    "buttons":[
+        {
+            "text":"[@string/ok]",
+            "actions":[
+                "[@card/action_accept]"
+            ]
+        }
+    ]
+}

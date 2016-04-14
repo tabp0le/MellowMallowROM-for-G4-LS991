@@ -1,0 +1,21 @@
+{
+	"template":"default",
+	"db_key":"concierge_spring_cleaning",
+	"card_icon":["ic_smartnotice_spring_cleaning.png", "ic_smartnotice_spring_cleaning.png"],
+	"summary":"[@string/springcleaning_notice_card_summary]",
+	"source":"[@string/springcleaning_notice_card_available]",
+	"buttons":[
+		{
+			"text":"[@string/go_to_clean]",
+			"actions":[
+				"[@card/action_accept]",
+				"intent:#Intent;action=com.lge.springcleaning.main;end"
+			]
+		}
+	],
+	"wearable": {
+		"type":"normal",
+		"buttonIdxs":["0"],
+		"icons":["goto"]
+	}
+}

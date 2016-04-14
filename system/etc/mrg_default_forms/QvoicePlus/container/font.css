@@ -1,0 +1,349 @@
+
+@font-face {
+    font-family :"LG_Number_Roboto_Light";
+    src: url("LG_Number_Roboto_Light.ttf");
+}
+
+@font-face {
+    font-family :"LG_Number_Roboto_Thin";
+    src: url("LG_Number_Roboto_Thin.ttf");
+}
+
+/* override useragent stylesheet */
+input, textarea, keygen, select, button, isindex {
+    font-family: inherit;
+}
+
+.basefont{
+    font-family : sans-serif;
+    font-weight : normal;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.agent_list_01_green{
+    font-weight : bold;
+    font-size: 18px;
+    color: #1ddbd9;
+}
+
+.agent_font_72_01{
+    font-weight : normal;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.agent_font_72_01_b{
+    font-weight : bold;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.agent_font_160_01_Robo_Thin{
+    font-weight : normal;
+    font-size: 40px;
+    color: #ffffff;
+}
+
+.agent_font_58_01_Robo_Light{
+    font-weight : normal;
+    font-size: 14.5px;
+    color: #ffffff;
+}
+
+.agent_font_44_01{
+    font-weight : bold;
+    font-size: 11px;
+    color: #ffffff;
+}
+
+.agent_font_96_01{
+    font-weight : normal;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.agent_font_60_01{
+    font-weight : normal;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.agent_font_60_02{
+    font-weight : normal;
+    font-size: 15px;
+    color: #aaaaaa;
+}
+
+.agent_font_56_01{
+    font-weight : normal;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.agent_font_56_01_b{
+    font-weight : bold;
+    font-size: 14px;
+    color: #7e898f;
+}
+
+.agent_font_56_02_b{
+    font-weight : bold;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.agent_font_72_02{
+    font-weight : normal;
+    font-size: 18px;
+    color: #aaaaaa;
+}
+
+.agent_font_72_03{
+    font-weight : normal;
+    font-size: 18px;
+    color: #000000;
+}
+
+.agent_list_01{
+    font-size : 18px;
+    color: #ffffff;
+    font-weight : normal;
+}
+
+.agent_list_01_guide{
+    font-size : 18px;
+    color: #aaaaaa;
+    font-weight : normal;
+}
+
+.agent_qvoice_01{
+    font-size : 18px;
+    color: #ffffff;
+    font-weight : bold;
+}
+
+.agent_list_alarm_time{
+    font-family : "LG_Number_Roboto_Thin"!important;
+    font-size : 34px;
+    color: #ffffff;
+    font-weight : light;
+}
+
+.agent_list_alarm_time_ampm{
+    font-family : "LG_Number_Roboto_Light"!important;
+    font-size : 14px;
+    color: #ffffff;
+    font-weight : light;
+}
+
+.agent_list_alarm_name{
+    font-size : 13px;
+    color: #8d98ae;
+    font-weight : normal;
+}
+
+.agent_font_24_01{
+    font-size : 24px;
+    color: #ffffff;
+    font-weight : normal;
+}
+
+.agent_font_12_01{
+    font-size : 12px;
+    color: #aaaaaa;
+    font-weight : normal;
+}
+
+.agent_weather_temp_s{
+    font-size : 14px;
+    color: #ffffff;
+    font-weight : normal;
+}
+
+.agent_font_15_02{
+    font-size : 15px;
+    color: #aaaaaa;
+    font-weight : normal;
+}
+
+.agent_list_sub_01{
+    font-size : 14px;
+    color: #ffffff;
+    font-weight : normal;
+}
+
+.agent_list_info{
+    font-size : 14px;
+    color: #8d98ae;
+    font-weight : bold;
+}
+
+.agent_font_14_02_b{
+    font-size : 14px;
+    color: #ffffff;
+    font-weight : bold;
+}
+
+.agent_list_02{
+    font-size : 18px;
+    color: #8d98ae;
+    font-weight : normal;
+}
+
+.agent_list_03{
+    font-size : 18px;
+    color: #000000;
+    font-weight : normal;
+}
+
+.agent_list_03_guide{
+    font-size : 18px;
+    color: #aaaaaa;
+    font-weight : normal;
+}
+
+.agent_weather_temp{
+    font-size : 72px;
+    color: #ffffff;
+    font-weight : normal;
+}
+
+.agent_font_33_5_01{
+    font-size : 33.5px;
+    color: #ffffff;
+    font-weight : normal;
+}
+
+.agent_contact_title_01{
+    font-size : 20px;
+    color: #ffffff;
+    font-weight : normal;
+}
+
+.agent_font_15_03{
+    font-size : 15px;
+    color: #e91919;
+    font-weight : normal;
+}
+
+.agent_font_15_04{
+    font-size : 15px;
+    color: #13fff7;
+    font-weight : normal;
+}
+
+.agent_list_sub_03{
+    font-size : 14px;
+    color: #fd494c;
+    font-weight : normal;
+}
+
+.agent_list_sub_04{
+    font-size : 14px;
+    color: #1ddbd9;
+    font-weight : normal;
+}
+
+.agent_list_sub_02{
+    font-size : 14px;
+    color: #8d98ae;
+    font-weight : normal;
+}
+
+.agent_help_01{
+    font-size : 22px;
+    color: #ffffff;
+    font-weight : normal;
+}
+
+.agent_weather_help_01{
+    font-size : 14px;
+    color: #ffffff;
+    font-weight : bold;
+}
+
+.agent_more{
+    font-size : 18px;
+    color: #1ddbd9;
+    font-weight : bold;
+}
+
+.agent_list_04{
+    font-size : 16px;
+    color: #b5b5b5;
+    font-weight : normal;
+}
+
+.agent_contact_title_02{
+    font-size : 22px;
+    color: #aaaaaa;
+    font-weight : normal;
+}
+
+.agent_weather_zone{
+    font-size : 13px;
+    color: #ffffff;
+    font-weight : normal;
+}
+
+.agent_weather_week{
+    font-size : 14px;
+    color: #ffffff;
+    font-weight : normal;
+}
+
+.agent_font_12_02{
+    font-size : 12px;
+    color: #ffffff;
+    font-weight : normal;
+}
+
+.my_font_weather_01{
+    font-size : 50px;
+    color: #ffffff;
+    font-weight : normal;
+}
+
+.my_font_schedule_01{
+    font-size : 18px;
+    color: #B4B4B4;
+    font-weight : bold;
+}
+
+.agent_weather_temp_l{
+    font-family : "LG_Number_Roboto_Light"!important;
+    font-size : 44px;
+    color: #ffffff;
+    font-weight : normal;
+}
+
+.agent_weather_weather{
+    font-size : 13px;
+    color: #ffffff;
+    font-weight : normal;
+}
+
+.agent_help_01_fontscale{
+    font-size : 22rem;
+    color: #ffffff;
+    font-weight : normal;
+}
+
+.agent_list_01_fontscale {
+    font-size : 18rem;
+    color: #1ddbd9;
+    font-weight : bold;
+}
+
+.agent_qvoice_01_fontscale {
+    font-size : 18rem;
+    color: #ffffff;
+    font-weight : normal;
+}
+
+.agent_list_01_green_fontscale{
+    font-weight : bold;
+    font-size: 18rem;
+    color: #1ddbd9;
+}

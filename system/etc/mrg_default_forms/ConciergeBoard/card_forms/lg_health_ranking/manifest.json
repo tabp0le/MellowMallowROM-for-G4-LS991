@@ -1,0 +1,15 @@
+{
+	"template":"default",
+	"card_icon":["ic_smartnotice_ranking.png","ic_smartnotice_ranking"],
+	"summary":"[@param/ranking_summary]",
+	"source":"[@param/ranking_source]",
+	"buttons":[
+		{
+			"text":"[@string/button_check_ranking]",
+			"actions":[
+				"[@card/action_accept]",
+				"intent:#Intent;component=com.lge.lifetracker/.MainActivity;S.view_type=ranking;end"
+			]
+		}
+	]
+}

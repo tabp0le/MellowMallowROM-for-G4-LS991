@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="temporary_files_summary">Delete temporary files in Smart cleaning to free up [@param/size] of space.</string>
+    <string name="free_up_cleaning_temp">Temporary files: [@param/size]</string>
+    <string name="go_to_clean">Go to Smart Cleaning</string>
+
+</resources>

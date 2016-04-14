@@ -1,0 +1,21 @@
+{
+	"templace":"default",
+	"card_icon":["location_setting.png", "location_setting.png"],
+    "summary":"[@param/device_name]",
+    "source":"[@string/summary_pre] [@param/device_settings]",
+    "buttons":[
+        {
+            "text":"[@string/go_to_Smart_settings]",
+            "actions":[
+                "[@card/action_accept]",
+				"intent:#Intent;launchFlags=0x8000;component=com.lge.iftttmanager/.ui.RecipeDetailActivity;S.action_field_slugs=[@param/action_field_slugs];S.action_field_values=[@param/action_field_values];S.recipe_slug=[@param/recipe_slug];end"
+            ]
+        }
+    ],
+	"wearable": {
+		"type":"normal",
+		"buttonIdxs":["0"],
+		"icon":["goto"]
+	},
+	"title":"[@string/package_title]"
+}

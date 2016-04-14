@@ -1,0 +1,14 @@
+{
+	"template":"initial",
+    "summary":"[@string/card_setting_life_space]",
+    "source":"[@string/smartbulletin_summary]",
+    "buttons":[
+        {
+            "text":"[@string/btn_move_homescreen_settings]",
+            "actions":[
+                "[@card/action_accept]",
+                "concierge://go_homescreensettings"
+            ]
+        }
+    ]
+}

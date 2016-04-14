@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <library name="com.lge.zdi.splitwindow"
+            file="/system/framework/com.lge.zdi.splitwindow.jar"/>
+</permissions>
+

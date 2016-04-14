@@ -1,0 +1,76 @@
+<script>
+function TypeClass (v, value) {
+   this.type = v;
+   this.value = value;
+};
+var pressed_schedulebg_imgae = "url("+folderPath+"agent_list_bg_pressed.png)";
+var org_schedulebg_image;
+var pressed_status = false;
+
+$(".schedule_search").on('touchstart',function(e){
+    org_schedulebg_image =  $(e.currentTarget).css('background-image');
+    $(e.currentTarget).css('background-image', pressed_schedulebg_imgae);
+    pressed_status = true;
+
+    return true;
+});
+
+$(".schedule_search").on('touchmove',function(e){
+    $(e.currentTarget).css('background-image', org_schedulebg_image);
+    pressed_status = false;
+
+    return true;
+});
+
+$(".schedule_search").on('touchend',function(e){
+    if(pressed_status){
+        $(e.currentTarget).css('background-image', org_schedulebg_image);
+        var info= $(e.currentTarget).data('schinfo');
+
+        console.log(JSON.stringify(info));
+        window.AndroidInterface.sendToAndroidForStartActivity(JSON.stringify(info));
+    }
+
+    return true;
+});
+
+$('body').animate({ scrollTop:0},500);
+
+</script>
+
+<li style="background-image: url('<%= folderPath %>agent_list_bg_01.png') ;">
+    <% var is_first_schedule;
+     _.each( data, function(listItem, index){ %>
+        <div class="schedule">
+        <% if(is_first_schedule != listItem.dateweek_view ){
+            is_first_schedule = listItem.dateweek_view; %>
+            <table cellpadding="0" cellspacing="0" width="100%" height="48px"
+                    style="padding-left:9px; background-image: url('<%= folderPath %>agent_index_bg_01.png'); ">
+                <tr>
+                    <td><div class="agent_list_info"><%= listItem.dateweek_view %></div></td>
+                </tr>
+            </table>
+         <% } else {
+             listItem.dateweek_view = ""; %>
+             <table width="100%" height="1px" style="background-image: url('<%= folderPath %>agent_list_line.png'); "></table>
+         <% } %>
+
+        <table class="schedule_search" cellpadding="0" cellspacing="0" style="padding :9px 12px 10px 12px;  height: 64px;" width="100%"  data-schinfo='{
+                "action":"<%= listItem.action %>",
+                "uri":"<%= listItem.uri %>"
+        }'>
+            <tr>
+                <td><span class="agent_list_01" style="word-break:break-all;"><% if(listItem.title) {%><%= listItem.title %><%} else {%><%= listItem.guide_title %><%}%></span></td>
+            </tr>
+            <tr>
+                <td width=26% ><span class="agent_list_sub_01"><%= listItem.time_view %></span></td>
+            </tr>
+            <% if(listItem.eventLocation) {%>
+            <tr>
+                <td width=26% ><div class="agent_list_sub_01"><%= listItem.eventLocation %></div></td>
+            </tr>
+            <%}%>
+        </table>
+        </div>
+    <% }); %>
+</li>

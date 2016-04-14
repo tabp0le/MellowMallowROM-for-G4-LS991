@@ -1,0 +1,37 @@
+<resources>
+	<string name="camera_gesture_summary">"Shaking while taking selfies of your poses with friends? Try using gestures to take selfies."</string>
+	<string name="camera_gesture_source">"Gesture shot"</string>
+	<string name="camera_swap_summary">"Try swiping on the screen to quickly switch between the front and rear cameras."</string>
+	<string name="camera_swap_source">"Switch camera"</string>
+	<string name="camera_tapshot_summary">"Want to capture moments quickly to not miss it? Try tapping the screen to focus and capture at once."</string>
+	<string name="camera_tapshot_source">"Tap shot"</string>
+	<string name="camera_manualmode_summary">"Stuck with blurry photos? Try controlling the shutter speed, ISO, and focus."</string>
+	<string name="camera_manualmode_source">"Manual camera"</string>
+	<string name="camera_intervalshot_summary">"2... 1... Pose! Try taking multiple selfies in a row with different poses."</string>
+	<string name="camera_intervalshot_source">"Interval shot"</string>
+	<string name="qremote_alwayshome_summary">"Lost the remote again? Try using your phone as a remote and having it automatically show when home."</string>
+	<string name="qremote_alwayshome_source" translatable="flase">"[@param/qremote_app_name]"</string>
+	<string name="dualwindow_select_summary">"Want to watch videos while surfing the web? Try using two apps at the same time on one screen."</string>
+	<string name="dualwindow_select_source">"Dual window"</string>
+	<string name="systemui_knockon_summary">"Knock, knock. Try knocking twice on the screen to turn it on or off."</string>
+	<string name="systemui_knockon_source">"KnockON"</string>
+	<string name="ime_movecursor_summary">"Made a typo? Try touching and holding the Space key to move the cursor."</string>
+	<string name="ime_movecursor_source">"Move cursor"</string>
+	<string name="ime_suggestedwordflicking_summary">"Try swiping up on any word suggestion to enter it."</string>
+	<string name="ime_suggestedwordflicking_source">"Word suggestions"</string>
+	<string name="button_combination_summary">"Try arranging or adding Home touch buttons in the way you want."</string>
+	<string name="button_combination_source">"Home touch buttons"</string>
+	<string name="lgbackup_backup_summary">"Try safely backing up your content such as LG Home screen, settings, apps, and contacts to restore at a later time."</string>
+	<string name="lgbackup_backup_source">"LG Backup"</string>
+	<string name="setting_ringtoneautocomposed_summary">"Ring, ring. Who's calling? Try personalizing ringtones of incoming calls using their number."</string>
+	<string name="setting_ringtoneautocomposed_source">"Ringtone ID"</string>
+	
+	<string name="os_upgrade_summary">Preview new features in OS upgrade.</string>
+	<string name="os_upgrade_source">OS upgrade to be released</string>
+	
+	<string name="app_name">"QRemote"</string>
+	<string name="app_name_global">"QuickRemote"</string>
+	
+    <string name="throttle_help">"Learn more"</string>
+
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<Configure>
+    <Config operator="" country="HK" device="">
+    </Config>
+    <!-- HK -->
+    <Config operator="OPEN" country="HK" device="g3">
+<!--        <NxpConfigFileName> libnfc-nxp-hk.conf </NxpConfigFileName>  -->
+    </Config>
+
+    <Config operator="OPEN" country="HK" device="">
+         <ConfigFileName model="LG-H815"> libnfc-nxp-hk-815.conf </ConfigFileName>
+         <ConfigFileName model="LG-H815T"> libnfc-nxp-hk-815.conf </ConfigFileName>
+         <ConfigFileName model="LG-H818N"> libnfc-nxp-hk-818.conf </ConfigFileName>
+         <ConfigFileName model="LG-D722"> libnfc-nxp-hk-d722k.conf </ConfigFileName>
+         <ConfigFileName model="LG-D722k"> libnfc-nxp-hk-d722k.conf </ConfigFileName>
+         <ConfigFileName model="LG-H735T"> libnfc-nxp-hk-h735t.conf </ConfigFileName>
+         <ConfigFileName model="LG-H525n"> libnfc-brcm-h525n.conf </ConfigFileName>
+         <ConfigFileName model="LG-H961N"> libnfc-brcm-h961n.conf </ConfigFileName>
+
+         <FirmwareFileName model="LG-H525n"> libbrcm_fw </FirmwareFileName>
+         <FirmwareFileName model="LG-H815T"> libpn547_fw_22 </FirmwareFileName>
+         <FirmwareFileName model="LG-H818N"> libpn547_fw_C9 </FirmwareFileName>
+    </Config>
+</Configure>

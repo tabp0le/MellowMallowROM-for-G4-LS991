@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<Configure>
+    <Config operator="" country="" device="">
+        <!-- INITVALUE, two_toggleN, three_toggleV1N, two_toggleN_tonedown, three_toggleV1N_tonedown, two_toggleD -->
+        <IndicatorType> two_toggleN </IndicatorType>
+        <IndicatorType targetdevice="zee"> two_toggleN_tonedown </IndicatorType>
+
+        <!-- INITVALUE, usevibrate, onlyndefdiscovered -->
+        <RingSoundScenarioType> INITVALUE </RingSoundScenarioType>
+
+        <!-- INITVALUE, stay, update -->
+        <WCScenarioEnable> INITVALUE </WCScenarioEnable>
+
+        <!-- INITVALUE, uicc, ese -->
+        <SecureElementType> uicc </SecureElementType>
+
+        <!--INITVALUE, googlenative, directbeam, directbeam_mtkbt, mtkbt, WPSHandover, autoapplaunch (overlap possible (divide "," sign)) -->
+        <HandoverSupportType> googlenative </HandoverSupportType>
+
+        <!-- INITVALUE, off, offp2p, oncardrwp2p, oncard, oncardrw, oncardp2p, onrwp2p, open -->
+        <DefaultOnOffType> oncardrwp2p </DefaultOnOffType>
+
+        <!-- INITVALUE, vzw, gsma -->
+        <PopupDialogType> gsma </PopupDialogType>
+
+        <!-- INITVALUE, all, rwp2p -->
+        <PowerSaveType> INITVALUE </PowerSaveType>
+
+        <!-- INITVALUE, egw, gw, st, egwst, gwst -->
+        <SupportWalletType> INITVALUE </SupportWalletType>
+
+        <!--apply Access Control routine, verifying access right to the apk through Access Control Manager-->
+        <AccessControlEnable> true </AccessControlEnable> <!-- default value is true -->
+
+        <!--apply Execution Environment routing according to screen state
+         in SCREEN_LOCK/SCREEN_OFF, card mode is disabled.
+         this feature has dependency with isis/sequent wallet.-->
+        <!--<NfcEERoutingEnable> false </NfcEERoutingEnable>-->
+
+        <!--<DisableInPowerOffEnable> false </DisableInPowerOffEnable>-->
+
+        <!--control feasibility of CE mode in Low power mode (after power-off)
+         if 'true', card emulation mode is still available even after the phone is powered-off.
+         if 'false', card emulation doesn't work anymore until the phone is powered-up again.-->
+        <!--<CardEnableInPowerOff> true </CardEnableInPowerOff> default value is true -->
+
+        <!--MUST BE APPLIED to all LGE NFC devices-->
+        <!--VendorStablePatch> true </VendorStablePatch--> <!-- default value is true -->
+
+        <!--enable se-broadcasting only for NFC-permitted(NFC_PERM) applications
+         this feature came from ISIS requirement. so, the model requiring ISIS certi, should apply this feature-->
+        <PermittedSeBroadcastEnable> true </PermittedSeBroadcastEnable> <!-- default value is true -->
+
+        <!--NFC Empty Tag popup Dialog Scenario for ORG when Positve/Negative Detection,
+         PopupDialog will be display and offer link to play store-->
+        <EmptyPopupSupport> true </EmptyPopupSupport>
+
+        <!--Lock Screen Polling Enable Feature.-->
+        <LockScreenPollingEnable> false </LockScreenPollingEnable>
+
+        <NotifyonlyValidTag> true </NotifyonlyValidTag> <!-- default value is true -->
+
+        <SePatchEnabled> false </SePatchEnabled>
+
+        <TagLongTimePopupSupport> true </TagLongTimePopupSupport>
+
+        <!--MccMncSupport>false</MccMncSupport-->
+
+        <!-- feature for Advenced HCE settings -->
+        <AdvancedHCEEnable> true </AdvancedHCEEnable>
+
+        <!--  feature for HCE onHost Enable -->
+        <!--<HCEOnHostEnable> false </HCEOnHostEnable>-->
+
+        <!-- feature for HCE scenario -->
+        <!--<HceScenario> v1 </HceScenario>-->
+
+        <!--  feature for apply AidFilter, it is vzw requirement -->
+        <AidFilterEnable> false </AidFilterEnable>
+
+        <!-- feature for Gsma Multicast default for ISIS -->
+        <TransactionEventScenario> unicast </TransactionEventScenario>
+
+        <!-- feature for Remove Indicator Icon except Screen Unlock -->
+        <RemoveIconWhenLockScreen> false </RemoveIconWhenLockScreen>
+
+        <!-- feature for LG Sharing - Music Share -->
+        <LGSharingEnable> false </LGSharingEnable>
+        <LGSharingEnable targetdevice="g4"> true </LGSharingEnable>
+        <LGSharingEnable targetdevice="p1"> true </LGSharingEnable>
+        <LGSharingEnable targetdevice="pplus"> true </LGSharingEnable>
+
+        <!-- HCE Scenario (Screen Unlocked, Screen locked, Screen Off, Power Off) -->
+        <!-- Each scenario can use below config value -->
+        <!-- config : Tap and pay Setting routing, config_uicc : Add uicc default when HCE app doesn't install -->
+        <!-- uicc : uicc default routing         , host_uicc : Add uicc default when HCE app doesn't install -->
+        <!-- ese : Embedded default routing        , host_ese : Add eSE default when HCE app doesn't install -->
+        <!-- host : Host default routing -->
+        <!-- na : Disable Card Emulation -->
+        <HostCardEmulationScenario> config, config, config, config </HostCardEmulationScenario>
+
+        <UseGpacResultValidTime> false </UseGpacResultValidTime>
+
+        <!-- feature for SIM Swap Enable -->
+        <SIMSwapEnable> false </SIMSwapEnable>
+        <SIMSwapEnable targetdevice="h1"> true </SIMSwapEnable>
+
+        <!-- support AID automatic switching -->
+        <AutomaticSwitchingSupport> true </AutomaticSwitchingSupport>
+
+        <!-- feature for nxp stack library -->
+        <!-- determine which HCI event type is supported INITVALUE, rffieldoff (EVT_FIELD_ON/OFF events not supported), rffield_EEevent_off -->
+        <NFCCEventConfig> INITVALUE </NFCCEventConfig>
+
+        <!-- apply volatile card configuration -->
+        <!--<VolatileCardModeEnable> false </VolatileCardModeEnable>-->
+
+        <!-- B' type among UICC CE types is enable/disable -->
+        <UICCBPrimeEnable> false </UICCBPrimeEnable>
+
+        <!-- Dynamic Config File Name -->
+        <ConfigFileName> INITVALUE </ConfigFileName>
+        <!-- For P1 Dual SIM Model -->
+        <ConfigFileName targetdevice="p1" model="LG-H818P"> libnfc-nxp-h818np.conf </ConfigFileName>
+
+        <!-- Dynamic Firmware File Name -->
+        <FirmwareFileName> INITVALUE </FirmwareFileName>
+
+        <!-- NxP window Size adjust, default : 4 -->
+        <SwpWindowSize> 4 </SwpWindowSize>
+    </Config>
+</Configure>

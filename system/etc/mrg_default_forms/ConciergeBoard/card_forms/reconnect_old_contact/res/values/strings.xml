@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="reconnect_old_contact_summary">It has been over 3 months since you have been in touch with <b>[@param/contact]</b>.</string>
+    <string name="last_call_log">Last call log:</string>
+    <string name="last_message">Last message:</string>
+    <string name="go_to_favorites">Go to favorites</string>
+
+</resources>

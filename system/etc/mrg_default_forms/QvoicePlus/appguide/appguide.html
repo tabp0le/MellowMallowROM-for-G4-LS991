@@ -1,0 +1,21 @@
+<li style="background-image: url('../res/bg_alarm_list.png') ; color:#EAEAEA; ">
+    <div style="background-color:#00162D; border-radius:6px; font-size: 18px; color:#EAEAEA; padding: 10px; display: inline-block;">
+        말하기 버튼을 터치한 후, 아래와 같이 말씀해 보세요.
+    </div>
+    <div style="padding: 10px; ">
+        <span></span>
+    </div>
+        <table style="padding: 10px; font-size: 40px; color:#EAEAEA;">
+            <tr>
+                <td rowspan=2 style="font-size: 40px; color:#EAEAEA;"><%= data.hour%>:<%= data.minutes%></td>
+                <td width=60% style="font-size: 17px; color:#EAEAEA;"><%= data.am%></td>
+                <td rowspan=3 style="font-size: 12px; color:#EAEAEA;"><img src="../res/on.png" width=50 height=50 align="right"></td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan=2 style="font-size: 15px; color:#EAEAEA; "><%= data.city%>Madrid</td>
+            </tr>
+        </table>
+</li>

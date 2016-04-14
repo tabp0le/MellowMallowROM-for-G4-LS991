@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <link rel="stylesheet" type="text/css" href="font.css" />
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <style>
+        html {
+            font-size: 1px;
+        }
+
+        body {
+            margin:0px;
+            padding:0px;
+        }
+
+        ul.container {
+            list-style: none;
+            position: relative;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        ul.container li{
+            position: relative;
+            -webkit-transform: translate3d(0,0,0);
+            -webkit-transition: all 0.4s ease;
+        }
+
+        * {
+            -webkit-user-select : none;
+        }
+    </style>
+</head>
+
+<body style="margin: 6px;">
+    <a href=""> </a>
+    <div id="wrapper" class="basefont" style="height: 100%; overflow: auto;">
+        <ul class="container">
+        </ul>
+    </div>
+        <!-- Include and run scripts. -->
+        <script type="text/javascript" src="libs/jquery-2.0.3.js"></script>
+        <script type="text/javascript" src="libs/underscore.js"></script>
+        <script type="text/javascript" src="AgentAppContainer.js"></script>
+        <script type="text/javascript" src="libs/nativebridge.js"></script>
+</body>
+<script>
+    $('html').css('font-size', window.AndroidInterface.getDeviceFontScale()+'px');
+</script>
+</html>

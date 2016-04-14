@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="dyk_oiscamera_title">"노크 코드"</string>
+	<string name="dyk_oiscamera_description">"꺼진 화면에서 노크 코드 입력으로\n 홈화면에 바로 갈 수 있어요"</string>
+
+</resources>

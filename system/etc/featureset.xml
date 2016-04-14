@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<profiles>
+	<FeatureSet>
+		<item name="support_svlte">true</item>
+		<item name="support_send_burst_dtmf">true</item>
+		<item name="fix_timezone_by_mcc">true</item>
+		<item name="support_emergency_callback_mode_for_gsm">true</item>
+		<item name="support_sprint_n11">true</item>
+		<item name="NotSupportOtaSpNumber">true</item>
+		<item name="show_Mdn_For_VMS">true</item>
+		<item name="support_smart_dialing">true</item>
+		<item name="ecc_number_in_hidden_menu">true</item>
+		<item name="MANUAL_SELECTION_WITH_RAT">true</item>
+		<item name="MANAGED_TIME_SETTING">true</item>
+		<item name="sprint_location_spec">true</item>
+		<item name="block_private_log_level">0x111</item>
+		<item name="sprint_hdr_roaming">true</item>
+		<item name="sprint_ehrpd_forced">true</item>
+		<item name="CHANGE_CDMA_SUBSCRIPTION_TO_RUIM">true</item>
+		<item name="speech_codec_ind">true</item>
+		<item name="sprint_rr_support">true</item>
+
+		<!-- SMS [START] { -->
+		<item name="KREncodingScheme">false</item>
+		<item name="KSC5601Decoding">true</item>
+		<item name="cdma_sms_cdg2">false</item>
+		<item name="cdma_kr_testbed_mms_receive">true</item>
+		<item name="increase_user_permit_sent_sms_max_count">true</item>
+		<item name="support_emoji_in_concat_message">true</item>
+
+		<item name="cdma_priority_indicator">true</item>
+		<item name="cdma_sms_callback">true</item>
+
+		<item name="sprint_segment_sms">true</item>
+		<item name="remove_pagination_indicator">false</item>
+		<item name="sprint_reassembly_sms">true</item>
+		<item name="sprint_not_support_reassembly_sms_setting_menu">false</item>
+		<item name="support_sprint_vvm">true</item>
+		<item name="support_sprint_sms_roaming_guard">true</item>
+
+		<item name="reparse_wap_push_index">true</item>
+		<item name="support_sprint_lock_and_wipe">true</item>
+
+		<item name="mo_sms_with_1xcsfb">true</item>
+
+		<item name="support_sms_mo_in_ecbm">true</item>
+		<!-- SMS [END] } -->
+	</FeatureSet>
+</profiles>

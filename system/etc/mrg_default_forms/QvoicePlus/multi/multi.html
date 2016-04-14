@@ -1,0 +1,55 @@
+<script>
+//---------------------------------------------------------------------------------------------------
+// touch event
+
+var pressed_bg_imgae = 'url(' + folderPath + 'agent_list_bg_pressed.png)';
+var origin_bg_image;
+var pressed_status = false;
+
+$(".actionLine").on('touchstart',function(e){
+	if (!pressed_status) {
+		origin_bg_image =  $(e.currentTarget).css('background-image');
+		$(e.currentTarget).css('background-image', pressed_bg_imgae);
+		pressed_status = true;
+	}
+    return true;
+});
+
+$(".actionLine").on('touchmove',function(e){
+    $(e.currentTarget).css('background-image', origin_bg_image);
+    pressed_status = false;
+    return true;
+});
+
+$(".actionLine").on('touchend',function(e){
+    $(e.currentTarget).css('background-image', origin_bg_image);
+    var info= $(e.currentTarget).data('actionlineinfo');
+    console.log(JSON.stringify(info));
+    window.AndroidInterface.sendToAndroidForWernickeManager(JSON.stringify(info));
+    pressed_status = false;
+    return true;
+});
+</script>
+<style type="text/css">
+table.actionLine {
+	background:url("<%= folderPath %>agent_list_bg_01.png");
+}
+</style>
+
+<li>
+	<% _.each( data, function(listItem, index){ %>
+		<div>
+		<table class="actionLine" width=100% height=64 valign="center" style="padding-left:12px; padding-right:12px;"
+		data-actionlineinfo='{
+			"index": "<%= index %>"
+		}'>
+			<tr>
+				<td><span class="agent_list_01"><%= listItem.text %></span></td>
+			</tr>
+		</table>
+		<% if (data.length-1 > index) { %>
+			<table width=100% height=1 style="background-image: url('<%= folderPath %>agent_list_line.png');"></table>
+		<% } %>
+		</div>
+	<% }); %>
+</li>

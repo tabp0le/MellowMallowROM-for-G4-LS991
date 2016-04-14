@@ -1,0 +1,30 @@
+{
+    "template":"default",
+    "card_icon":["ic_myplace.png","ic_myplace.png"],
+    "summary":"[@string/title_text]",
+    "source":"[@string/source_text]",
+    
+    "buttons":[
+        {
+        "text":"[@string/see_more]",
+            "actions":[
+            "[@card/action_accept]",
+            "intent:#Intent;action=com.lge.myplace.ChangeHome;launchFlags=0x20;end"
+            ]
+        },
+        {
+        "text":"[@string/change]",
+            "actions":[
+            "[@card/action_accept]",
+            "intent:#Intent;action=com.lge.myplace.noti.RequestHomeChange.SmartNotice;launchFlags=0x20;S.concierge_action=broadcast;end"
+            ]
+        }
+    ],
+    "title":"[@string/title_my_place]",
+    "wearable": 
+    {
+        "type":"normal",
+        "buttonIdxs":["0"],
+        "icons":["goto"]
+    }
+}

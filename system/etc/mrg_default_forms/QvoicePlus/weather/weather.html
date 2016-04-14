@@ -1,0 +1,174 @@
+<script>
+//---------------------------------------------------------------------------------------------------
+// touch weather logo, goto website
+
+
+var kweater_src = folderPath+"app_weather_kweather_logo_normal.png";
+var pressed_accuweather_src = folderPath+"app_weather_accuweather_logo_pressed.png";
+var pressed_kweater_src = folderPath+"app_weather_kweather_logo_pressed.png";
+var pressed_weather_logo;
+var org_weather_logo;
+
+if ($("#logo").attr("src") == kweater_src) {
+    pressed_weather_logo = pressed_kweater_src;
+} else {
+    pressed_weather_logo = pressed_accuweather_src;
+}
+
+$(".weather_logo").on('touchstart',function(e){
+    org_weather_logo = $("#logo").attr("src");
+
+    $("#logo").attr("src",pressed_weather_logo);
+
+    return true;
+});
+
+$(".weather_logo").on('touchmove',function(e){
+    $("#logo").attr("src",org_weather_logo);
+
+    return true;
+});
+
+$(".weather_logo").on('touchend',function(e){
+    $("#logo").attr("src",org_weather_logo);
+
+    return true;
+});
+
+</script>
+
+<li style="background-image: url('<%= folderPath %>agent_list_bg_01.png'); ">
+<% _.each( data, function(listItem, index){ %>
+    <div style="padding: 9px 0px 0px 9px"><span class="agent_weather_zone">  <%= listItem.city %> | <%= listItem.country %></span>
+    </div>
+    <!-- Today weather -->
+    <table border="0" width="100%" cellpadding="0" cellspacing="0" align="center" style="padding:11px 0px 15px 0px;">
+        <tr>
+            <td align="right" width="50%" style="padding-right:6px;"><img src="<%= folderPath %><%= listItem.icon %>.png" width="49px" height="49px"></td>
+            <td align="left" width="50%" style="padding-bottom:5px;"><div class="agent_weather_temp_l">
+		            <%= listItem.temp_left_view %>
+		            <% if( listItem.temp_right_view=="0") {%>
+		            <img src="<%= folderPath %>agent_weather_temp_f.png" height="49px" style="position:relative; margin-left:-9px; padding-bottom:1px"valign="bottom">
+		            <% } else { %>
+		            <img src="<%= folderPath %>agent_weather_temp_c.png" height="49px" style="position:relative; margin-left:-9px; padding-bottom:1px"valign="bottom">
+		            <% } %></div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><span class="agent_weather_help_01"><%= listItem.icon_text %></span></td>
+        </tr>
+        <tr >
+            <td colspan="2" align="center" style="padding-top:4px; padding-bottom:8px;">
+                <span class="agent_weather_temp_s"><%= listItem.temp_min %>/<%= listItem.temp_max %>&nbsp;&nbsp;<%= listItem.realfeel_view %></span>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Week weather -->
+    <% if(listItem.week == "true") {
+        // calculate width of Week weather, for weather status ...
+        var week_width = $("#week_table").width();
+        var day_width = week_width/5;
+        $(".day_status").css('max-width', day_width); %>
+    <table id="week_table" border="0" width="100%" cellpadding="0" cellspacing="0" style="background-image: url('<%= folderPath %>agent_list_bg_02.png'); padding-left: 1px; padding-right: 1px; table-layout:fixed">
+        <tr width=100%>
+            <td width=20% align=center style="text-align:center; <% if(listItem.day1_pick == "true"){ %> background-image: url('<%= folderPath %>agent_weather_today.png'); <%}%>">
+                <table border="0" width="100%" cellpadding="0" cellspacing="0" style="padding: 5px 2px 10px 2px;">
+                    <tr><td><span class="agent_weather_week"><%= listItem.day1_day %></span></td>
+                    </tr>
+                    <tr><td><img src="<%= folderPath %><%= listItem.day1_icon %>.png" width="30px" style=" margin-bottom:-5px;"></td>
+                    </tr>
+                    <tr><td class="day_status" style="solid :black;
+                            max-width: <%= day_width %>px;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;"><span class="agent_weather_weather"><%= listItem.day1_status %></span>
+                        </td>
+                    </tr>
+                    <tr><td><span class="agent_weather_weather"><%= listItem.day1_max %>/<%= listItem.day1_min %></span></td>
+                    </tr>
+                </table>
+            </td>
+
+            <td width=20% align=center style="text-align:center; <% if(listItem.day2_pick == "true"){ %> background-image: url('<%= folderPath %>agent_weather_today.png'); <%}%>">
+                <table border="0" width="100%" cellpadding="0" cellspacing="0" style="padding: 5px 2px 10px 2px;">
+                    <tr><td><span class="agent_weather_week"><%= listItem.day2_day %></span></td>
+                    </tr>
+                    <tr><td><img src="<%= folderPath %><%=listItem.day2_icon%>.png" width="30px" style=" margin-bottom:-5px;"></td>
+                    </tr>
+                    <tr><td class="day_status" style="solid :black;
+                            max-width: <%= day_width %>px;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;"><span class="agent_weather_weather"><%= listItem.day2_status %></span></td>
+                    </tr>
+                    <tr><td><span class="agent_weather_weather"><%= listItem.day2_max %>/<%= listItem.day2_min %></span></td>
+                    </tr>
+                </table>
+            </td>
+
+            <td width=20% align=center style="text-align:center; <% if(listItem.day3_pick == "true"){%> background-image: url('<%= folderPath %>agent_weather_today.png'); <%}%>">
+                <table border="0" width="100%" cellpadding="0" cellspacing="0" style="padding: 5px 2px 10px 2px;">
+                    <tr><td><span class="agent_weather_week"><%= listItem.day3_day %></span></td>
+                    </tr>
+                    <tr><td><img src="<%= folderPath %><%=listItem.day3_icon%>.png" width="30px" style=" margin-bottom:-5px;"></td>
+                    </tr>
+                    <tr><td class="day_status" style="solid :black;
+                            max-width: <%= day_width %>px;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;"><span class="agent_weather_weather"><%= listItem.day3_status %></span></td>
+                    </tr>
+                    <tr><td><span class="agent_weather_weather"><%= listItem.day3_max %>/<%= listItem.day3_min %></span></td>
+                    </tr>
+                </table>
+            </td>
+
+            <td width=20% align=center style="text-align:center; <% if(listItem.day4_pick == "true"){%> background-image: url('<%= folderPath %>agent_weather_today.png'); <%}%>">
+                <table border="0" width="100%" cellpadding="0" cellspacing="0" style="padding: 5px 2px 10px 2px;">
+                    <tr><td><span class="agent_weather_week"><%= listItem.day4_day %></span></td>
+                    </tr>
+                    <tr><td><img src="<%= folderPath %><%= listItem.day4_icon %>.png" width="30px" style=" margin-bottom:-5px;"></td>
+                    </tr>
+                    <tr><td class="day_status" style="solid :black;
+                            max-width: <%= day_width %>px;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;"><span class="agent_weather_weather"><%= listItem.day4_status %></span></span></td>
+                    </tr>
+                    <tr><td><span class="agent_weather_weather"><%= listItem.day4_max %>/<%= listItem.day4_min %></span></td>
+                    </tr>
+                </table>
+            </td>
+
+            <td width=20% align=center style="text-align:center; <% if(listItem.day5_pick == "true"){%> background-image: url('<%= folderPath %>agent_weather_today.png'); <%}%>" >
+                <table border="0" width="100%" cellpadding="0" cellspacing="0" style="padding: 5px 2px 10px 2px;">
+                    <tr><td><span class="agent_weather_week"><%= listItem.day5_day %></span></td>
+                    </tr>
+                    <tr><td><img src="<%= folderPath %><%= listItem.day5_icon %>.png" width="30px" style=" margin-bottom:-5px;"></td>
+                    </tr>
+                    <tr><td class="day_status" style="solid :black;
+                            max-width: <%= day_width %>px;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;"><span class="agent_weather_weather"><%= listItem.day5_status %></span></td>
+                    </tr>
+                    <tr><td><span class="agent_weather_weather"><%= listItem.day5_max %>/<%= listItem.day5_min %></span></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <% } %>
+
+    <!-- weather logo -->
+    <div class="weather_logo">
+        <img src=
+            <% if(listItem.logo_img_kweather == "true") {%>
+                "<%= folderPath %>app_weather_kweather_logo_normal.png"
+            <% } else { %>
+                "<%= folderPath %>app_weather_accuweather_logo_normal.png"
+            <% } %> id="logo" align="right" style="height:15px;" onclick="javascript:location.href='<%= listItem.uri %>'" >
+    </div>
+<% }); %>
+</li>

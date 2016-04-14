@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="ranking_up_summary">Ranking up. Keep on going!</string>
+    <string name="ranking_down_summary">Ranking down. Let's pick it up!</string>
+    <string name="ranking_source">Previous rank [@param/before_ranking], Current rank [@param/current_ranking]</string>
+    <string name="check_ranking">Check rankings</string>
+
+</resources>

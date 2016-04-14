@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="call_received">Call received from <b>[@param/display_phone]</b>. Call back?</string>
+    <string name="call_refused">Call declined [@autoTimeParam/refuse_time]</string>
+    <string name="refusal_msg_sent">Quick message sent [@autoTimeParam/refuse_time]</string>
+    <string name="call">Call</string>
+    <string name="send_msg">Send Message</string>
+    <string name="show_later">Show later</string>
+
+</resources>

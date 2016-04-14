@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2009 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<cardlist>
+	<card>
+        <name>Camera_Swap</name>
+        <title>[@string/sp_rcs_switch_camera_SHORT]</title>
+        <description>[@string/dyk_ugc_camera_switch_desc]</description>
+        <backgroundimage>res/drawable/camera_switch.jpg</backgroundimage>
+        <iconimage>res/drawable/ic_launcher_camera.png</iconimage>
+		<launcherapp>intent://#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10100000;component=com.lge.camera/.app.CameraActivity;S.camera_function=swipe_swap_view;end</launcherapp>
+        <intenturi>intent://#Intent;component=com.lge.camera/.app.HelpActivity;S.camera_function=swipe_swap_view;end</intenturi>
+    </card>
+	<card>
+        <name>Camera_Gesture</name>
+        <title>[@string/dyk_ugc_camera_gesture_title]</title>
+        <description>[@string/dyk_ugc_camera_gesture_desc]</description>
+        <backgroundimage>res/drawable/camera_gestureshot.jpg</backgroundimage>
+        <iconimage>res/drawable/ic_launcher_camera.png</iconimage>
+		<launcherapp>intent://#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10100000;component=com.lge.camera/.app.CameraActivity;S.camera_function=gesture_shutter;end</launcherapp>
+        <intenturi>intent://#Intent;component=com.lge.camera/.app.HelpActivity;S.camera_function=gesture_shutter;end</intenturi>
+    </card>  	
+	<card>
+		<name>Camera_TapShot</name>
+		<title>[@string/dyk_ugc_camera_tap_shot_title]</title>
+		<description>[@string/dyk_ugc_camera_tap_shot_desc1]</description>
+		<backgroundimage>res/drawable/camera_tapshot.jpg</backgroundimage>
+		<iconimage>res/drawable/ic_launcher_camera.png</iconimage>
+		<launcherapp>intent://#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10100000;component=com.lge.camera/.app.CameraActivity;S.camera_function=tap_shot;end</launcherapp>
+		<intenturi>intent://#Intent;component=com.lge.camera/.app.HelpActivity;S.camera_function=mode_normal;end</intenturi>
+	</card>
+	<card>
+        <name>Camera_ManualMode</name>
+        <title>[@string/dyk_ugc_camera_manual_title1]</title>
+        <description>[@string/dyk_ugc_camera_manual_desc1]</description>
+        <backgroundimage>res/drawable/camera_manual_mode.jpg</backgroundimage>
+        <iconimage>res/drawable/ic_launcher_camera.png</iconimage>
+        <launcherapp>intent://#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10100000;component=com.lge.camera/.app.CameraActivity;S.camera_function=manual_mode;end</launcherapp>
+        <intenturi>intent://#Intent;component=com.lge.camera/.app.HelpActivity;S.camera_function=manual_mode;end</intenturi>
+    </card> 	
+    <card>
+        <name>Camera_IntervalShot</name>
+        <title>[@string/dyk_ugc_camera_interval_shot_title]</title>
+        <description>[@string/dyk_ugc_camera_interval_shot_desc]</description>
+        <backgroundimage>res/drawable/camera_interval_shot.jpg</backgroundimage>
+        <iconimage>res/drawable/ic_launcher_camera.png</iconimage>
+        <launcherapp>intent://#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10100000;component=com.lge.camera/.app.CameraActivity;S.camera_function=interval_shot;end</launcherapp>
+        <intenturi>intent://#Intent;component=com.lge.camera/.app.HelpActivity;S.camera_function=interval_shot;end</intenturi>
+    </card>
+	
+	<card>
+        <name>Qremote_AlwaysHome</name>
+        <title>[@string/sp_quicksettings_remote_control_global_NORMAL]</title>
+        <description>[@string/dyk_ugc_qremote_always_home_desc_global]</description>
+        <backgroundimage>res/drawable/q_remote.jpg</backgroundimage>
+        <iconimage>res/drawable/setting.png</iconimage>
+        <launcherapp>intent://#Intent;component=com.lge.qremote/.settings.MainSettingsPrefAct;end</launcherapp>
+        <intenturi>intent://#Intent;component=com.lge.qremote/.ui.HelpActivity;S.help_name=AutoDisplay;end</intenturi>
+    </card>   
+	
+	<card>
+        <name>DualWindow_Select</name>
+        <title>[@string/sp_title_dual_window_NORMAL]</title>
+        <description>[@string/dyk_ugc_dual_window_select_desc]</description>
+        <backgroundimage>res/drawable/dual_window.jpg</backgroundimage>
+		<iconimage>res/drawable/ic_null.png</iconimage>
+		<launcherapp>intent://#Intent;component=com.android.settings/.Settings%24DualWindowHelpActivity;end</launcherapp>
+        <intenturi>intent://#Intent;component=com.android.settings/.Settings%24DualWindowHelpActivity;end</intenturi>
+    </card> 
+
+	<card>
+        <name>SystemUI_KnockOn</name>
+        <title>[@string/gesture_title_turn_screen_on]</title>
+        <description>[@string/dyk_ugc_gesture_knock_on_desc]</description>
+        <backgroundimage>res/drawable/knock_on.jpg</backgroundimage>
+        <iconimage>res/drawable/ic_null.png</iconimage>
+		<launcherapp>intent://#Intent;component=com.android.settings/.Settings%24UserHelpGuideActivity;i.help_guide_number=1;S.help_guide_function=gesture;end</launcherapp>
+        <intenturi>intent://#Intent;component=com.android.settings/.Settings%24UserHelpGuideActivity;i.help_guide_number=1;S.help_guide_function=gesture;end</intenturi>
+    </card>
+	
+    <card>
+        <name>Ime_MoveCursor</name>
+        <title>[@string/dyk_ugc_keyboard_move_cursor_title]</title>
+        <description>[@string/dyk_ugc_keyboard_move_cursor_desc]</description>
+        <backgroundimage>res/drawable/keyboard_move_cursor.jpg</backgroundimage>
+        <iconimage>res/drawable/ic_null.png</iconimage>
+		<launcherapp>intent://#Intent;action=android.intent.action.MAIN;component=com.lge.ime/.setting.help.SmartTipsGuideActivity;S.LG_KEYBOARD_HELP_GUIDE_PAGE=MOVE_CURSOR;end</launcherapp>
+        <intenturi>intent://#Intent;action=android.intent.action.MAIN;component=com.lge.ime/.setting.help.SmartTipsGuideActivity;S.LG_KEYBOARD_HELP_GUIDE_PAGE=MOVE_CURSOR;end</intenturi>
+    </card>	
+	
+	<card>
+        <name>Ime_SuggestedWordFlicking</name>
+        <title>[@string/dyk_ugc_keyboard_suggested_word_title]</title>
+        <description>[@string/dyk_ugc_keyboard_suggested_word_desc]</description>
+        <backgroundimage>res/drawable/keyboard_suggestion.jpg</backgroundimage>
+        <iconimage>res/drawable/ic_null.png</iconimage>
+		<launcherapp>intent://#Intent;action=android.intent.action.MAIN;component=com.lge.ime/.setting.help.SmartTipsGuideActivity;S.LG_KEYBOARD_HELP_GUIDE_PAGE=SUGGESTED_WORD;end</launcherapp>
+        <intenturi>intent://#Intent;action=android.intent.action.MAIN;component=com.lge.ime/.setting.help.SmartTipsGuideActivity;S.LG_KEYBOARD_HELP_GUIDE_PAGE=SUGGESTED_WORD;end</intenturi>
+    </card>	
+	
+	<card>
+        <name>Button_Combination</name>
+        <title>[@string/display_home_touch_buttons]</title>
+        <description>[@string/dyk_ugc_navigationbar_desc]</description>
+        <backgroundimage>res/drawable/navigation.jpg</backgroundimage>
+        <iconimage>res/drawable/ic_null.png</iconimage>
+		<launcherapp>intent://#Intent;component=com.android.settings/.Settings%24ButtonCombinationDragActivity;end</launcherapp>
+        <intenturi>intent://#Intent;component=com.android.settings/.Settings%24ButtonCombinationDragActivity;end</intenturi>
+    </card> 
+	
+    <card>
+        <name>LGBackup_Backup</name>
+        <title>[@string/app_name_LG_Backup]</title>
+        <description>[@string/dyk_ugc_lg_backup_desc]</description>
+        <backgroundimage>res/drawable/LG_backup.jpg</backgroundimage>
+        <iconimage>res/drawable/ic_backup.png</iconimage>
+		<launcherapp>intent://#Intent;action=android.intent.action.MAIN;component=com.lge.bnr/.activity.BNRMainActivity;end</launcherapp>
+        <intenturi>intent://#Intent;action=com.lge.bnr.intent.action.MY_GUIDE_HELP;component=com.lge.bnr/.activity.BNRHelpActivity;end</intenturi>
+    </card>
+    
+    <card>
+        <name>Setting_RingtoneAutoComposed</name>
+        <title>[@string/dyk_acr_card_title]</title>
+        <description>[@string/dyk_acr_card_desc]</description>
+        <backgroundimage>res/drawable/compose_ringtone.jpg</backgroundimage>
+        <iconimage>res/drawable/setting.png</iconimage>
+		<launcherapp>intent://#Intent;component=com.android.settings/.sound.ACRSettingsHelp;end</launcherapp>
+        <intenturi>intent://#Intent;component=com.android.settings/.sound.ACRSettingsHelp;end</intenturi>
+    </card>        
+</cardlist>

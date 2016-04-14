@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Added System Default Fonts Family.
+-->
+<familyset version="22">
+
+    <family name="default_roboto">
+        <font weight="400" style="normal">Roboto-Regular.ttf</font>
+        <font weight="400" style="italic">Roboto-Italic.ttf</font>
+        <font weight="700" style="normal">Roboto-Bold.ttf</font>
+        <font weight="700" style="italic">Roboto-BoldItalic.ttf</font>
+    </family>
+
+    <family name="lgtravel">
+        <font weight="400" style="normal">HYTravel_Regular.ttf</font>
+        <font weight="700" style="normal">HYTravel_Bold.ttf</font>
+    </family>
+    <family name="hyfonxrain">
+        <font weight="400" style="normal">HYFoxrain_Regular.ttf</font>
+        <font weight="700" style="normal">HYFoxrain_Bold.ttf</font>
+    </family>
+    <family name="hycoffee">
+        <font weight="400" style="normal">HYCoffee_Regular.ttf</font>
+        <font weight="700" style="normal">HYCoffee_Bold.ttf</font>
+    </family>
+    <family name="hypure">
+        <font weight="400" style="normal">HYPureWhite_Regular.ttf</font>
+        <font weight="700" style="normal">HYPureWhite_Bold.ttf</font>
+    </family>
+    <family name="lgserif">
+        <font weight="400" style="normal">HYSerif_Regular.ttf</font>
+        <font weight="700" style="normal">HYSerif_Bold.ttf</font>
+    </family>
+
+    <alias name="default_roboto-light" to="lg-sans-serif" weight="300" />
+</familyset>

@@ -1,0 +1,30 @@
+/*
+ * Application Laboratory, Mobile Communication Company, LG ELECTRONICS INC., SEOUL, KOREA
+ * Copyright(c) 2014 by LG Electronics Inc.
+ *
+ * All rights reserved. No part of this work may be reproduced, stored in a
+ * retrieval system, or transmitted by any means without prior written
+ * Permission of LG Electronics Inc.
+ */
+
+/* Card icon*/
+.reconnect_old_contact .card_icon {
+	content: url("ic_smartnotice_favorite.png");
+	vertical-align: top;
+	width: 24px;
+}
+
+/* New Card icon*/
+.reconnect_old_contact .card_icon.newCardIcon {
+	content: url("ic_smartnotice_favorite_white.png");
+}
+
+/* Summary text */
+.reconnect_old_contact .summary {
+	width: 280px;
+}
+
+/* Source text */
+.reconnect_old_contact .source {
+	width: 305px;
+}

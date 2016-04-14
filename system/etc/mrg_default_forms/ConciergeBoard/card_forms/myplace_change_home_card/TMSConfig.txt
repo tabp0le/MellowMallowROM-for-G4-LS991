@@ -1,0 +1,12 @@
+[Config]
+TMSPackageName=LGMyPlacesSettings
+
+[Add_references]
+Count=0
+
+[Rejected_references]
+Count=0
+
+[Languages]
+Count=0
+

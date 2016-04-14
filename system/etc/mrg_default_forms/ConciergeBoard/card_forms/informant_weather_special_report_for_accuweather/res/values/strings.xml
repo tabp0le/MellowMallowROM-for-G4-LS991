@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="weather_alert">Alert</string>
+    <string name="effective_time">Effective from</string>
+    <string name="see_more">See more</string>
+	<string name="location">Location</string>
+
+</resources>
