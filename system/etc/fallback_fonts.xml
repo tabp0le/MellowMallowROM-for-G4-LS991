@@ -405,11 +405,6 @@
             <file>NotoSansYi-Regular.ttf</file>
         </fileset>
     </family>
-	<family>
-        <fileset>
-            <file>NotoColorEmoji.ttf</file>
-        </fileset>
-    </family>
     <family>
         <fileset>
             <file>NotoSansSymbols-Regular-Subsetted.ttf</file>
@@ -438,6 +433,11 @@
     <family>
         <fileset>
             <file>NanumGothic.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <fileset>
+            <file>NotoColorEmoji.ttf</file>
         </fileset>
     </family>
     <family>
