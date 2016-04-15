@@ -87,6 +87,33 @@
         <font weight="400" style="normal">CarroisGothicSC-Regular.ttf</font>
     </family>
 
+    <family name="Stable_Slap">
+        <font weight="400" style="normal">Font1_Stable_Slap.ttf</font>
+    </family>
+    <family name="Luminous_Serif">
+        <font weight="400" style="normal">Font2_Luminous_Serif.ttf</font>
+    </family>
+    <family name="Smart_Monospaced">
+        <font weight="400" style="normal">Font3_Smart_Monospaced.ttf</font>
+    </family>
+    <family name="Luminous_Sans">
+        <font weight="400" style="normal">Font4_Luminous_Sans.ttf</font>
+    </family>
+    <family name="Comics_Narrow">
+        <font weight="400" style="normal">Font5_Comics_Narrow.ttf</font>
+    </family>
+    <family name="Luminous_Script">
+        <font weight="400" style="normal">Font6_Luminous_Script.ttf</font>
+    </family>
+    <family name="Spacious_SmallCap">
+        <font weight="400" style="normal">Font7_Spacious_SmallCap.ttf</font>
+    </family>
+
+    <family name="lg-sans-serif">
+        <font weight="300" style="normal">LGRoboto-Light.ttf</font>
+    </family>
+    <alias name="lg-sans-serif-light" to="lg-sans-serif" weight="300" />
+
     <!-- fallback fonts -->
     <family lang="und-Arab" variant="elegant">
         <font weight="400" style="normal">NotoNaskhArabic-Regular.ttf</font>
@@ -330,8 +357,19 @@
     <family lang="und-Yiii">
         <font weight="400" style="normal">NotoSansYi-Regular.ttf</font>
     </family>
+<<<<<<< HEAD
     <family>
         <font weight="400" style="normal">NotoSansSymbols-Regular-Subsetted.ttf</font>
+=======
+    <family lang="zh-Hans">
+        <font weight="400" style="normal">NotoColorEmoji.ttf</font>
+    </family>
+    <family lang="zh-Hant">
+        <font weight="400" style="normal">NotoColorEmoji.ttf</font>
+    </family>
+    <family lang="zh-Hans">
+        <font weight="400" style="normal">NotoColorEmoji_NonAME.ttf</font>
+>>>>>>> origin/master
     </family>
     <family lang="zh-Hans">
         <font weight="400" style="normal" index="2">NotoSansCJK-Regular.ttc</font>
@@ -346,12 +384,26 @@
     <family lang="ko">
         <font weight="400" style="normal" index="1">NotoSansCJK-Regular.ttc</font>
     </family>
+<<<<<<< HEAD
     <family lang="und-Zsye">
         <font weight="400" style="normal">NotoColorEmoji.ttf</font>
+=======
+    <family>
+        <font weight="400" style="normal">NotoSansSymbols-Regular-Subsetted.ttf</font>
+>>>>>>> origin/master
     </family>
     <family>
         <font weight="400" style="normal">DroidSansFallback.ttf</font>
     </family>
+<<<<<<< HEAD
+=======
+    <family lang="ja">
+        <font weight="400" style="normal">MTLmr3m.ttf</font>
+    </family>
+    <family>
+        <font weight="400" style="normal">LG_HKSC.ttf</font>
+    </family>
+>>>>>>> origin/master
     <!--
         Tai Le and Mongolian are intentionally kept last, to make sure they don't override
         the East Asian punctuation for Chinese.
