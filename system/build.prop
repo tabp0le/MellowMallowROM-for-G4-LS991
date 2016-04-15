@@ -17,10 +17,10 @@ ro.build.type=user
 ro.build.user=jenkins
 ro.build.host=LGEACI8R3
 ro.build.tags=release-keys
-ro.build.flavor=p1_spr_us-user
+ro.build.flavor=p1_global_com-user
 ro.product.model=LGLS991
 ro.product.brand=lge
-ro.product.name=p1_spr_us
+ro.product.name=p1_global_com
 ro.product.device=p1
 ro.product.board=msm8992
 # ro.product.cpu.abi and ro.product.cpu.abi2 are obsolete,
@@ -36,8 +36,8 @@ ro.board.platform=msm8992
 # ro.build.product is obsolete; use ro.product.device
 ro.build.product=p1
 # Do not try to parse description, fingerprint, or thumbprint
-ro.build.description=p1_spr_us-user 6.0 MRA58K 160741805a3e8 release-keys
-ro.build.fingerprint=lge/p1_spr_us/p1:6.0/MRA58K/160741805a3e8:user/release-keys
+ro.build.description=p1_global_com-user 6.0 MRA58K 160741805a3e8 release-keys
+ro.build.fingerprint=lge/p1_global_com/p1:6.0/MRA58K/160741805a3e8:user/release-keys
 ro.build.characteristics=default
 ro.lge.lguiversion=4.2
 # end build properties
@@ -286,10 +286,11 @@ log.tag.LocationManagerService=DEBUG
 log.tag.NlpProxy=DEBUG
 log.tag.LocSvc_java=DEBUG
 log.tag.LgeGpsIndicator=DEBUG
-ro.build.target_operator=SPR
-ro.build.target_country=US
+ro.build.target_operator=GLOBAL
+ro.build.target_country=COM
 ro.telephony.default_network=10
 telephony.lteOnCdmaDevice=1
+telephony.lteOnGsmDevice=1
 persist.gsm.sms.disablelog=64
 ro.lge.lcd_default_brightness=145
 ro.config.ringtone=01_Life_Is_Good.ogg
@@ -404,7 +405,7 @@ persist.telephony.oosisdc=false
 persist.lg.data.fd=-1
 persist.lg.data.llkklk.exact=true
 ro.lge.swversion_arb=
-ro.lge.swversion=MellowMallow ZVB v1.01
+ro.lge.swversion=MellowMallow ZVB v1.01 Global
 ro.lge.swversion_short=ZVB
 ro.lge.swversion_rev=02
 ro.lge.factoryversion=LGLS991AT-00-ZVB-SPR-US-MAR-14-2016+02
