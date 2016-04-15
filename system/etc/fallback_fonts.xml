@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
     NOTE: this file is the legacy format, for compatibility with apps. The new,
     more flexible format is fonts.xml. Please keep the two in sync until the legacy
@@ -405,14 +405,14 @@
             <file>NotoSansYi-Regular.ttf</file>
         </fileset>
     </family>
-	<family>
+    <family>
         <fileset>
             <file>NotoColorEmoji.ttf</file>
         </fileset>
     </family>
     <family>
         <fileset>
-            <file>NotoSansSymbols-Regular-Subsetted.ttf</file>
+            <file>NotoColorEmoji_NonAME.ttf</file>
         </fileset>
     </family>
     <family>
@@ -437,7 +437,7 @@
     </family>
     <family>
         <fileset>
-            <file>NanumGothic.ttf</file>
+            <file>NotoSansSymbols-Regular-Subsetted.ttf</file>
         </fileset>
     </family>
     <family>
@@ -448,6 +448,11 @@
     <family>
         <fileset>
             <file lang="ja">MTLmr3m.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <fileset>
+              <file>LG_HKSC.ttf</file>
         </fileset>
     </family>
     <!--
