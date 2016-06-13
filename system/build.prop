@@ -405,7 +405,11 @@ persist.telephony.oosisdc=false
 persist.lg.data.fd=-1
 persist.lg.data.llkklk.exact=true
 ro.lge.swversion_arb=
+<<<<<<< HEAD
 ro.lge.swversion=MellowMallow ZVB v1.01 Global
+=======
+ro.lge.swversion=MellowMallow ZVB v1.03
+>>>>>>> refs/remotes/origin/master
 ro.lge.swversion_short=ZVB
 ro.lge.swversion_rev=02
 ro.lge.factoryversion=LGLS991AT-00-ZVB-SPR-US-MAR-14-2016+02
